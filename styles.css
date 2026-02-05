@@ -190,6 +190,49 @@ main {
     margin-top: 0.5rem;
 }
 
+/* RSVP Section */
+.rsvp {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.rsvp h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+    letter-spacing: 0.05em;
+    font-variant: small-caps;
+}
+
+.rsvp-intro {
+    font-size: 1.15rem;
+    color: #6a6a6a;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.rsvp-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: #c9a882;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    border: 2px solid #c9a882;
+    transition: all 0.3s ease;
+    font-variant: small-caps;
+}
+
+.rsvp-button:hover {
+    background-color: transparent;
+    color: #c9a882;
+}
+
 /* Footer */
 footer {
     background-color: transparent;
