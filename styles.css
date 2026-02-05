@@ -1,0 +1,173 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    line-height: 1.8;
+    color: #2c2c2c;
+    background-color: #fdfdfb;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0.5rem 0;
+}
+
+.ampersand {
+    font-size: 2.5rem;
+    font-style: italic;
+    margin: 1rem 0;
+    font-weight: 300;
+}
+
+.wedding-date {
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 2rem;
+}
+
+/* Main Content */
+main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+    letter-spacing: 0.02em;
+}
+
+.welcome p {
+    font-size: 1.15rem;
+    color: #6a6a6a;
+    line-height: 1.8;
+}
+
+/* Events Section */
+.events {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.events h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+    letter-spacing: 0.02em;
+}
+
+.event {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #e8e8e6;
+}
+
+.event:last-child {
+    border-bottom: none;
+}
+
+.event h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+}
+
+.event-date {
+    font-size: 1.1rem;
+    color: #6a6a6a;
+    margin: 0.5rem 0;
+}
+
+.event-time {
+    font-size: 1rem;
+    color: #8a8a8a;
+    font-style: italic;
+    margin: 0.3rem 0;
+}
+
+.event-description {
+    font-size: 1rem;
+    color: #6a6a6a;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f7;
+    text-align: center;
+    padding: 2.5rem;
+    color: #999;
+    font-size: 0.9rem;
+    border-top: 1px solid #e8e8e6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 400px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .ampersand {
+        font-size: 1.8rem;
+    }
+    
+    .wedding-date {
+        font-size: 0.9rem;
+    }
+    
+    main {
+        padding: 3rem 1.5rem;
+    }
+}
