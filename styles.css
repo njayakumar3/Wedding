@@ -45,12 +45,13 @@ body > *:not(.corner-ornament) {
 /* Hero Section */
 .hero {
     position: relative;
-    width: 100%;
+    width: calc(100% - 10px);
     height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 5px;
 }
 
 .header-image {
