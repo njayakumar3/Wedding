@@ -233,6 +233,49 @@ main {
     color: #c9a882;
 }
 
+/* Registry Section */
+.registry {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.registry h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 1.2rem;
+    color: #2c2c2c;
+    letter-spacing: 0.05em;
+    font-variant: small-caps;
+}
+
+.registry-intro {
+    font-size: 1rem;
+    color: #8a8a8a;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.registry-button {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: transparent;
+    color: #c9a882;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 300;
+    border: 1px solid #c9a882;
+    transition: all 0.3s ease;
+    font-variant: small-caps;
+}
+
+.registry-button:hover {
+    background-color: #c9a882;
+    color: #fff;
+}
+
 /* Footer */
 footer {
     background-color: transparent;
