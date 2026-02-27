@@ -8,17 +8,17 @@
 body {
     font-family: 'Playfair Display', 'Georgia', serif;
     line-height: 1.8;
-    color: #2c2c2c;
-    background: #faf7f2;
+    color: #4a4238;
+    background: #f7f3ec;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(201, 168, 130, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(201, 168, 130, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 30%, rgba(201, 168, 130, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(201, 168, 130, 0.1) 0%, transparent 50%);
     background-attachment: fixed;
     border: 12px solid #c9a882;
     box-shadow: 
-        inset 0 0 0 2px #f5f0eb, 
+        inset 0 0 0 2px #ece6db, 
         inset 0 0 0 3px #c9a882,
-        inset 0 0 100px rgba(201, 168, 130, 0.08);
+        inset 0 0 120px rgba(201, 168, 130, 0.08);
     min-height: 100vh;
     position: relative;
 }
@@ -32,10 +32,10 @@ body::before {
     height: 100%;
     background-image: 
         url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3CfeColorMatrix values='0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)'/%3E%3C/svg%3E"),
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(201,168,130,.025) 2px, rgba(201,168,130,.025) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.015) 2px, rgba(0,0,0,.015) 4px);
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(201,168,130,.02) 2px, rgba(201,168,130,.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.008) 2px, rgba(0,0,0,.008) 4px);
     pointer-events: none;
-    opacity: 0.6;
+    opacity: 0.4;
     z-index: 1;
 }
 
@@ -69,24 +69,56 @@ body > *:not(.corner-ornament) {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    filter: sepia(0.15) saturate(1.1);
+    filter: sepia(0.15) saturate(1.1) brightness(0.85);
+    transform: scale(1.05);
+    will-change: transform;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(247, 243, 236, 0.15) 0%,
+        rgba(247, 243, 236, 0.05) 40%,
+        rgba(247, 243, 236, 0.2) 70%,
+        rgba(247, 243, 236, 0.6) 100%
+    );
+    z-index: 1;
 }
 
 .hero-text {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     color: #fff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 
+        0 2px 12px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(201, 168, 130, 0.15);
     padding: 2rem;
 }
 
-.hero-text h1 {
+.hero-intro {
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.hero-text h1,
+.hero-name {
     font-size: 3.5rem;
     font-weight: 300;
     letter-spacing: 0.08em;
     margin: 0.5rem 0;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
 }
 
 .ampersand {
@@ -94,7 +126,9 @@ body > *:not(.corner-ornament) {
     font-style: italic;
     margin: 1.5rem 0;
     font-weight: 300;
-    opacity: 0.9;
+    opacity: 0.85;
+    color: #b8a080;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .wedding-date {
@@ -104,11 +138,88 @@ body > *:not(.corner-ornament) {
     font-weight: 300;
     margin-top: 2rem;
     font-variant-numeric: oldstyle-nums;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .wedding-date sup {
     font-size: 0.7em;
     font-variant-numeric: normal;
+}
+
+/* Fleur-de-lis ornament */
+.fleur-de-lis {
+    color: #b8a080;
+    opacity: 0.5;
+    filter: drop-shadow(0 0 6px rgba(138, 117, 88, 0.15));
+}
+
+.fleur-hero {
+    margin-top: 2rem;
+}
+
+.fleur-hero .fleur-de-lis {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 8px rgba(201, 168, 130, 0.3));
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.4s ease;
+}
+
+.scroll-line {
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(180deg, transparent, rgba(201, 168, 130, 0.8));
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(0.7); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* Hero fade edge */
+.hero-fade-edge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #f7f3ec);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Section Dividers */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    margin: 3.5rem 0;
+    padding: 0 1rem;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 130, 0.4), transparent);
+    max-width: 120px;
+}
+
+.section-divider .fleur-de-lis {
+    opacity: 0.45;
 }
 
 /* Main Content */
@@ -118,6 +229,7 @@ main {
     padding: 4rem 2rem;
 }
 
+/* Welcome Section */
 .welcome {
     text-align: center;
     padding: 0 1rem;
@@ -127,20 +239,30 @@ main {
     font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
-    color: #2c2c2c;
+    color: #8a7558;
     letter-spacing: 0.05em;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    text-shadow: none;
 }
 
 .welcome p {
     font-size: 1.15rem;
-    color: #6a6a6a;
+    color: #6a5f52;
     line-height: 1.8;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
+.welcome-location {
+    margin-top: 0.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.95rem !important;
+    color: #8a7f70 !important;
 }
 
 /* Events Section */
 .events {
-    margin-top: 4rem;
     text-align: center;
     padding: 0 1rem;
 }
@@ -149,15 +271,17 @@ main {
     font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 3rem;
-    color: #2c2c2c;
+    color: #8a7558;
     letter-spacing: 0.05em;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    text-shadow: none;
 }
 
 .event {
     margin-bottom: 3rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid #c9a882;
+    border-bottom: 1px solid rgba(201, 168, 130, 0.2);
 }
 
 .event:last-child {
@@ -168,15 +292,17 @@ main {
     font-size: 1.8rem;
     font-weight: 300;
     margin-bottom: 0.5rem;
-    color: #2c2c2c;
+    color: #5a4f42;
     letter-spacing: 0.03em;
+    font-family: 'Cormorant SC', 'Georgia', serif;
 }
 
 .event-date {
-    font-size: 1.1rem;
-    color: #6a6a6a;
+    font-size: 1.15rem;
+    color: #5a4f42;
     margin: 0.5rem 0;
     font-variant-numeric: oldstyle-nums;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .event-date sup {
@@ -184,35 +310,48 @@ main {
     font-variant-numeric: normal;
 }
 
+.event-year {
+    font-size: 1.05rem;
+    color: #7a6f62;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    letter-spacing: 0.05em;
+}
+
 .event-time {
-    font-size: 1rem;
-    color: #8a8a8a;
+    font-size: 1.05rem;
+    color: #6a5f52;
     font-style: italic;
     margin: 0.3rem 0;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .event-location {
-    font-size: 1rem;
-    color: #6a6a6a;
-    margin: 0.5rem 0;
+    font-size: 1.05rem;
+    color: #5a4f42;
+    margin: 0.8rem 0;
+    line-height: 1.7;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .event-attire {
-    font-size: 1rem;
-    color: #8a8a8a;
+    color: #8a7f70;
     font-style: italic;
-    margin: 0.8rem 0 0 0;
+    margin: 1rem 0 0 0;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .event-description {
     font-size: 1rem;
-    color: #6a6a6a;
+    color: #6a5f52;
     margin-top: 0.5rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 /* RSVP Section */
 .rsvp {
-    margin-top: 4rem;
     text-align: center;
     padding: 0 1rem;
 }
@@ -221,41 +360,46 @@ main {
     font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
-    color: #2c2c2c;
+    color: #8a7558;
     letter-spacing: 0.05em;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    text-shadow: none;
 }
 
 .rsvp-intro {
     font-size: 1.15rem;
-    color: #6a6a6a;
+    color: #6a5f52;
     margin-bottom: 2rem;
     line-height: 1.8;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .rsvp-button {
     display: inline-block;
     padding: 1rem 3rem;
-    background-color: #c9a882;
-    color: #fff;
+    background-color: #8a7558;
+    color: #f7f3ec;
     text-decoration: none;
     font-size: 1.1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 300;
-    border: 2px solid #c9a882;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid #8a7558;
+    transition: all 0.4s ease;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    box-shadow: 0 0 20px rgba(138, 117, 88, 0.15);
 }
 
 .rsvp-button:hover {
     background-color: transparent;
-    color: #c9a882;
+    color: #8a7558;
+    box-shadow: 0 0 30px rgba(138, 117, 88, 0.25);
 }
 
 /* Registry Section */
 .registry {
-    margin-top: 4rem;
     text-align: center;
     padding: 0 1rem;
 }
@@ -264,36 +408,42 @@ main {
     font-size: 2.5rem;
     font-weight: 300;
     margin-bottom: 1.5rem;
-    color: #2c2c2c;
+    color: #8a7558;
     letter-spacing: 0.05em;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    text-shadow: none;
 }
 
 .registry-intro {
     font-size: 1.15rem;
-    color: #6a6a6a;
+    color: #6a5f52;
     margin-bottom: 2rem;
     line-height: 1.8;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .registry-button {
     display: inline-block;
     padding: 1rem 3rem;
     background-color: transparent;
-    color: #c9a882;
+    color: #8a7558;
     text-decoration: none;
     font-size: 1.1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 300;
-    border: 2px solid #c9a882;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid #8a7558;
+    transition: all 0.4s ease;
     font-variant: small-caps;
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    box-shadow: 0 0 20px rgba(138, 117, 88, 0.1);
 }
 
 .registry-button:hover {
-    background-color: #c9a882;
-    color: #fff;
+    background-color: #8a7558;
+    color: #f7f3ec;
+    box-shadow: 0 0 30px rgba(138, 117, 88, 0.25);
 }
 
 /* Footer */
@@ -301,16 +451,42 @@ footer {
     background-color: transparent;
     text-align: center;
     padding: 3rem 2.5rem;
-    color: #999;
+    color: #8a7f70;
     font-size: 0.9rem;
     letter-spacing: 0.2em;
+}
+
+.footer-fleur {
+    margin-bottom: 1.2rem;
+}
+
+.footer-fleur .fleur-de-lis {
+    opacity: 0.35;
+}
+
+.footer-monogram {
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: #8a7558;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.footer-date {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: #8a7f70;
+    text-transform: none;
 }
 
 /* Fade-in Animation */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(24px);
+    transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1), transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .fade-in.visible {
@@ -328,8 +504,13 @@ footer {
         height: 400px;
     }
     
-    .hero-text h1 {
+    .hero-text h1,
+    .hero-name {
         font-size: 2rem;
+    }
+
+    .hero-intro {
+        font-size: 0.8rem;
     }
     
     .ampersand {
@@ -348,6 +529,13 @@ footer {
     .events {
         padding: 0 0.5rem;
     }
+
+    .welcome h2,
+    .events h2,
+    .rsvp h2,
+    .registry h2 {
+        font-size: 2rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -355,5 +543,9 @@ footer {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+
+    .scroll-line {
+        animation: none;
     }
 }
