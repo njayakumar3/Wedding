@@ -40,7 +40,7 @@ SENDER_NAME="Nithya & Luke"
 SENDER_PASSWORD="${SENDER_PASSWORD:-}"
 
 # Email content
-SUBJECT="You're Invited — Nithya & Luke's Wedding 💒"
+SUBJECT="You're Invited — Nithya & Luke's Wedding"
 HTML_FILE="email-evite.html"
 EMAIL_LIST="emails.csv"
 
@@ -203,8 +203,13 @@ fi
 # Full send mode
 validate_config
 
-# Read and clean email list
-mapfile -t EMAILS < <(grep -v '^\s*$\|^\s*#' "$EMAIL_LIST" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | tr -d '\r')
+# Read and clean email list (supports comma-separated and/or one-per-line)
+mapfile -t EMAILS < <(
+    tr -d '\r' < "$EMAIL_LIST" |        # strip Windows line endings
+    tr ',' '\n' |                        # split commas onto separate lines
+    sed 's/^[[:space:]]*//;s/[[:space:]]*$//' |  # trim whitespace
+    grep -v '^\s*$\|^\s*#'              # skip blanks and comments
+)
 
 TOTAL=${#EMAILS[@]}
 
@@ -257,10 +262,10 @@ for i in "${!EMAILS[@]}"; do
 
     if send_email "$EMAIL" ""; then
         echo -e "${GREEN}✅${NC}"
-        ((SUCCESS++))
+        SUCCESS=$((SUCCESS + 1))
     else
         echo -e "${RED}❌${NC}"
-        ((FAILED++))
+        FAILED=$((FAILED + 1))
         FAILED_LIST+=("$EMAIL")
     fi
 

@@ -1,4 +1,4 @@
-]633;E;{ sed -n '1,516p' styles.css\x3b printf '\\n'\x3b sed -n '929,985p' styles.css\x3b } > website.css;44fa7856-179d-40c2-b4ae-1ac5e2398c80]633;C/* Reset and Base Styles */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -53,7 +53,7 @@ body > *:not(.corner-ornament) {
 .hero {
     position: relative;
     width: calc(100% - 10px);
-    height: 600px;
+    height: 620px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -96,7 +96,7 @@ body > *:not(.corner-ornament) {
     text-shadow: 
         0 2px 16px rgba(0, 0, 0, 0.6),
         0 0 50px rgba(201, 168, 130, 0.25);
-    padding: 2rem;
+    padding: 3rem 2rem 2rem;
 }
 
 /* Hero entrance animation */
@@ -539,39 +539,62 @@ footer {
 }
 
 
-/* Responsive Design */
+/* Responsive Design — Tablet & small laptops */
 @media (max-width: 768px) {
     body {
         border-width: 8px;
     }
-    
+
     .hero {
-        height: 400px;
+        height: 440px;
     }
-    
+
+    .hero-text {
+        padding: 2.5rem 1.5rem 1.5rem;
+    }
+
     .hero-text h1,
     .hero-name {
         font-size: 2rem;
+        letter-spacing: 0.05em;
     }
 
     .hero-intro {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.2rem;
     }
-    
+
     .ampersand {
         font-size: 1.8rem;
+        margin: 0.4rem 0;
     }
-    
+
     .wedding-date {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        margin-top: 1.2rem;
     }
-    
+
+    .fleur-hero {
+        margin-top: 1.2rem;
+    }
+
+    .scroll-indicator {
+        bottom: 1.2rem;
+    }
+
+    .scroll-line {
+        height: 32px;
+    }
+
     main {
         padding: 2rem 1.5rem;
     }
-    
+
     .welcome,
-    .events {
+    .events,
+    .rsvp,
+    .registry {
         padding: 0 0.5rem;
     }
 
@@ -580,6 +603,285 @@ footer {
     .rsvp h2,
     .registry h2 {
         font-size: 2rem;
+    }
+
+    .welcome p,
+    .rsvp-intro,
+    .registry-intro {
+        font-size: 1.05rem;
+    }
+
+    .event-date {
+        font-size: 1.05rem;
+    }
+
+    .rsvp-button,
+    .registry-button {
+        padding: 0.9rem 2.4rem;
+        font-size: 1rem;
+    }
+
+    .section-divider {
+        margin: 2rem 0;
+    }
+
+    .divider-line {
+        max-width: 90px;
+    }
+
+    footer {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+
+    .footer-monogram {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsive Design — Mobile phones */
+@media (max-width: 480px) {
+    body {
+        border-width: 6px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-text {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .hero-text h1,
+    .hero-name {
+        font-size: 1.55rem;
+        letter-spacing: 0.03em;
+    }
+
+    .hero-intro {
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.02em;
+    }
+
+    .ampersand {
+        font-size: 1.4rem;
+        margin: 0.3rem 0;
+    }
+
+    .wedding-date {
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        margin-top: 1rem;
+    }
+
+    .fleur-hero {
+        margin-top: 0.8rem;
+    }
+
+    .fleur-hero .fleur-de-lis {
+        width: 30px;
+        height: 36px;
+    }
+
+    .scroll-indicator {
+        bottom: 0.8rem;
+    }
+
+    .scroll-line {
+        height: 24px;
+    }
+
+    .hero-fade-edge {
+        height: 50px;
+    }
+
+    main {
+        padding: 1.5rem 1rem;
+    }
+
+    .welcome,
+    .events,
+    .rsvp,
+    .registry {
+        padding: 0 0.25rem;
+    }
+
+    .welcome h2,
+    .events h2,
+    .rsvp h2,
+    .registry h2 {
+        font-size: 1.6rem;
+        letter-spacing: 0.03em;
+    }
+
+    .welcome p,
+    .rsvp-intro,
+    .registry-intro {
+        font-size: 0.95rem;
+    }
+
+    .rsvp-sub,
+    .registry-sub {
+        font-size: 0.9rem;
+    }
+
+    .event-date {
+        font-size: 1rem;
+    }
+
+    .event-time {
+        font-size: 0.9rem;
+    }
+
+    .event-location {
+        font-size: 0.95rem;
+    }
+
+    .event-city {
+        font-size: 0.85rem;
+    }
+
+    .event-attire {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+    }
+
+    .rsvp-button,
+    .registry-button {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.85rem 1.5rem;
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .section-divider {
+        margin: 1.5rem 0;
+        gap: 0.8rem;
+    }
+
+    .divider-line {
+        max-width: 60px;
+    }
+
+    .section-divider .fleur-de-lis {
+        width: 22px;
+        height: 26px;
+    }
+
+    footer {
+        padding: 1.5rem 1rem 1.2rem;
+    }
+
+    .footer-monogram {
+        font-size: 1.3rem;
+    }
+
+    .footer-date {
+        font-size: 0.75rem;
+    }
+}
+
+/* Very small phones (iPhone SE, Galaxy S series, etc.) */
+@media (max-width: 360px) {
+    body {
+        border-width: 5px;
+    }
+
+    .hero {
+        height: 360px;
+    }
+
+    .hero-text h1,
+    .hero-name {
+        font-size: 1.35rem;
+    }
+
+    .hero-intro {
+        font-size: 0.7rem;
+    }
+
+    .ampersand {
+        font-size: 1.2rem;
+    }
+
+    .wedding-date {
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+    }
+
+    .welcome h2,
+    .events h2,
+    .rsvp h2,
+    .registry h2 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Landscape orientation on phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: 280px;
+    }
+
+    .hero-text {
+        padding: 1rem;
+    }
+
+    .hero-text h1,
+    .hero-name {
+        font-size: 1.4rem;
+        margin: 0.1rem 0;
+    }
+
+    .hero-intro {
+        margin-bottom: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .ampersand {
+        font-size: 1.2rem;
+        margin: 0.15rem 0;
+    }
+
+    .wedding-date {
+        margin-top: 0.5rem;
+    }
+
+    .fleur-hero {
+        margin-top: 0.5rem;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    footer {
+        padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+    }
+}
+
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+    .rsvp-button,
+    .registry-button {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
