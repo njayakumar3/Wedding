@@ -1,43 +1,113 @@
 /* ============================
-   Invitation Card (Print)
+   Invitation Card — Double-Sided (5×7 Print)
+   Side 1: Full photo
+   Side 2: Invitation text
    ============================ */
 
-/* Override body for invitation page */
+/* === BASE === */
 .inv-body {
     background: #e8e0d8;
-    border: none;
-    box-shadow: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
     padding: 2rem;
-    background-image: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
 }
 
 .inv-body::before {
     display: none;
 }
 
-/* Card — 5×7 inch standard invitation */
+/* === SHARED CARD === */
 .inv-card {
-    width: 5in;
-    height: 7in;
-    background: #FFF8F0;
+    width: 7in;
+    height: 5in;
+    background: #FEFCF4;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
     box-shadow:
         0 1px 3px rgba(0,0,0,0.06),
         0 8px 30px rgba(0,0,0,0.08),
         0 25px 60px rgba(0,0,0,0.05);
-    position: relative;
-    overflow: hidden;
-    flex-shrink: 0;
 }
 
-/* Subtle border tint on card edge */
-.inv-card::before {
+/* =============================================
+   SIDE 1 — PHOTO
+   ============================================= */
+
+.inv-side-photo {
+    background: #2a1f1f;
+}
+
+.inv-photo-border {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inv-photo-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(0.92) brightness(1.0) contrast(1.02);
+}
+
+/* Gradient overlay at bottom for text legibility */
+.inv-photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1in 0.5in 0.4in;
+    background: linear-gradient(
+        to top,
+        rgba(20, 12, 12, 0.7) 0%,
+        rgba(20, 12, 12, 0.4) 40%,
+        transparent 100%
+    );
+    text-align: center;
+}
+
+.inv-photo-names {
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: rgba(255, 248, 240, 0.95);
+    letter-spacing: 0.16em;
+    margin: 0 0 0.2rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.inv-photo-date {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.65rem;
+    font-weight: 300;
+    color: rgba(255, 248, 240, 0.75);
+    letter-spacing: 0.25em;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* =============================================
+   SIDE 2 — INVITATION TEXT
+   ============================================= */
+
+.inv-side-text {
+    background: #FEFCF4;
+}
+
+/* Subtle tint border on outer edge */
+.inv-side-text::before {
     content: '';
     position: absolute;
     inset: 0;
-    border: 1px solid rgba(139, 26, 43, 0.12);
+    border: 1px solid rgba(201, 168, 130, 0.25);
     pointer-events: none;
     z-index: 1;
 }
@@ -45,25 +115,25 @@
 /* Inner decorative frame */
 .inv-inner-frame {
     position: absolute;
-    inset: 14px;
-    border: 1px solid rgba(139, 26, 43, 0.18);
+    inset: 12px;
+    border: 1px solid rgba(201, 168, 130, 0.30);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 0.28in 0.32in;
+    justify-content: space-between;
+    padding: 0.15in 0.4in;
     text-align: center;
     overflow: hidden;
 }
 
-/* Corner accents on inner frame */
+/* Corner accents */
 .inv-inner-frame::before,
 .inv-inner-frame::after {
     content: '';
     position: absolute;
     width: 18px;
     height: 18px;
-    border-color: rgba(139, 26, 43, 0.25);
+    border-color: rgba(201, 168, 130, 0.45);
     border-style: solid;
 }
 .inv-inner-frame::before {
@@ -79,107 +149,44 @@
 
 /* Top ornament */
 .inv-ornament {
-    margin: 0 0 0.15rem;
+    margin: 0 0 0.22rem;
     line-height: 1;
-}
-
-.inv-ornament .fleur-de-lis {
-    opacity: 0.4;
-}
-
-/* Photo — artful oval portrait with ornate double frame */
-.inv-photo-outer {
-    margin: 0.1rem auto 0.35rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-/* Decorative outer ring */
-.inv-photo-outer::before {
-    content: '';
-    position: absolute;
-    width: 1.1in;
-    height: 1.21in;
-    border-radius: 50%;
-    border: 1px solid rgba(139, 26, 43, 0.13);
-    pointer-events: none;
-}
-
-.inv-photo-frame {
-    width: 0.95in;
-    height: 1.05in;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    border: 2px solid rgba(139, 26, 43, 0.22);
-    box-shadow:
-        0 0 0 3px rgba(255, 248, 240, 0.95),
-        0 0 0 4px rgba(139, 26, 43, 0.12),
-        0 3px 12px rgba(114, 47, 55, 0.10),
-        0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-/* Soft vignette overlay on photo */
-.inv-photo-vignette {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
-    box-shadow: inset 0 0 20px 8px rgba(255, 248, 240, 0.35);
-}
-
-.inv-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: saturate(0.9) brightness(1.02) sepia(0.06);
+    color: rgba(201, 168, 130, 0.55);
 }
 
 /* Family names */
 .inv-families {
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.18rem;
 }
 
 .inv-parent {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.62rem;
+    font-size: 0.85rem;
     font-weight: 400;
-    color: #4A2630;
+    color: #3A2024;
     letter-spacing: 0.04em;
-    line-height: 1.5;
-}
-
-.inv-connector {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.6rem;
-    font-style: italic;
-    color: #8C6A72;
+    line-height: 1.45;
     margin: 0;
 }
 
 .inv-families-join {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.52rem;
+    font-size: 0.71rem;
     font-style: italic;
-    color: #8C6A72;
+    color: #8c7a5a;
     letter-spacing: 0.12em;
     text-transform: lowercase;
-    margin: 0.06rem 0;
+    margin: 0.04rem 0;
 }
 
 /* Request line */
 .inv-request {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.56rem;
+    font-size: 0.75rem;
     font-style: italic;
-    color: #5C3640;
-    line-height: 1.5;
+    color: #5c4830;
     letter-spacing: 0.03em;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.16rem;
 }
 
 /* Decorative dividers */
@@ -188,124 +195,141 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    margin: 0.12rem auto;
-    width: 2.2in;
-}
-
-.inv-divider-sm {
-    width: 1.4in;
+    margin: 0.18rem auto;
+    width: 3.2in;
 }
 
 .inv-divider-line {
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(139, 26, 43, 0.25), transparent);
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 130, 0.35), transparent);
 }
 
 .inv-divider-diamond {
     width: 4px;
     height: 4px;
-    background: rgba(139, 26, 43, 0.28);
+    background: rgba(201, 168, 130, 0.45);
     transform: rotate(45deg);
     flex-shrink: 0;
 }
 
 /* Couple names */
 .inv-couple {
-    margin: 0.1rem 0;
+    margin: 0.16rem 0;
 }
 
 .inv-name {
     font-family: 'Cormorant SC', 'Georgia', serif;
-    font-size: 1.4rem;
+    font-size: 1.81rem;
     font-weight: 300;
-    color: #722F37;
+    color: #4a3b27;
     letter-spacing: 0.08em;
     font-variant: small-caps;
     line-height: 1.15;
-    margin: 0.04rem 0;
+    margin: 0.03rem 0;
 }
 
 .inv-ampersand {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 1rem;
+    font-size: 1.21rem;
     font-style: italic;
     font-weight: 300;
-    color: #C94C5A;
-    margin: 0.06rem 0;
-    opacity: 0.85;
+    color: #c9a882;
+    margin: 0.04rem 0;
+    opacity: 0.8;
 }
 
-/* Date & details */
-.inv-details {
-    margin: 0.15rem 0 0.1rem;
+/* =============================================
+   TWO-COLUMN BOTTOM: Details + RSVP
+   ============================================= */
+.inv-columns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    margin-top: 0.14rem;
 }
 
+.inv-col-left,
+.inv-col-right {
+    flex: 1;
+    text-align: center;
+    padding: 0 0.2in;
+}
+
+.inv-col-divider {
+    width: 1px;
+    height: 1.15in;
+    background: linear-gradient(to bottom, transparent, rgba(201, 168, 130, 0.35), transparent);
+    flex-shrink: 0;
+}
+
+.inv-col-spacer {
+    height: 0.18rem;
+}
+
+/* Date & details (left column) */
 .inv-day {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.68rem;
-    color: #4A2630;
+    font-size: 0.87rem;
+    color: #3A2024;
     letter-spacing: 0.06em;
-    margin-bottom: 0.04rem;
+    margin: 0 0 0.02rem;
 }
 
 .inv-year {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.6rem;
-    color: #6E4850;
+    font-size: 0.81rem;
+    color: #6e5838;
     letter-spacing: 0.05em;
-    margin-bottom: 0.04rem;
+    margin: 0 0 0.02rem;
 }
 
 .inv-time {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.6rem;
+    font-size: 0.81rem;
     font-style: italic;
-    color: #5C3640;
+    color: #5c4830;
+    margin: 0;
 }
 
 /* Venue */
-.inv-venue {
-    margin: 0.12rem 0 0.15rem;
-}
-
-.inv-venue-address {
+.inv-venue-line {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.6rem;
-    color: #4A2630;
+    font-size: 0.81rem;
+    color: #3A2024;
     letter-spacing: 0.04em;
-    line-height: 1.5;
+    line-height: 1.45;
+    margin: 0;
 }
 
 /* Attire */
 .inv-attire {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.5rem;
-    color: #8C6A72;
+    font-size: 0.65rem;
+    color: #8c7a5a;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     font-style: italic;
-    margin-bottom: 0.1rem;
+    margin: 0;
 }
 
-/* Website / QR section */
-.inv-website-section {
-    margin: 0.1rem 0;
-}
-
+/* RSVP / QR (right column) */
 .inv-rsvp-line {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.52rem;
+    font-size: 0.75rem;
     font-style: italic;
-    color: #5C3640;
+    color: #5c4830;
     letter-spacing: 0.04em;
-    margin-bottom: 0.18rem;
+    margin: 0 0 0.12rem;
+    line-height: 1.5;
 }
 
 .inv-qr {
-    margin: 0.08rem auto;
-    width: 0.55in;
-    height: 0.55in;
+    margin: 0 auto 0.1rem;
+    width: 0.8in;
+    height: 0.8in;
 }
 
 .inv-qr-img {
@@ -316,93 +340,118 @@
 
 .inv-url {
     font-family: 'Cormorant SC', 'Georgia', serif;
-    font-size: 0.6rem;
+    font-size: 0.69rem;
     font-weight: 500;
-    color: #722F37;
+    color: #8a6a3e;
     letter-spacing: 0.1em;
-    margin-top: 0.15rem;
-}
-
-.inv-url-note {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.48rem;
-    font-style: italic;
-    color: #8C6A72;
-    letter-spacing: 0.06em;
-    margin-top: 0.08rem;
+    margin: 0;
 }
 
 /* Footer monogram */
 .inv-footer {
-    margin-top: 0.15rem;
+    margin-top: 0.16rem;
 }
 
 .inv-monogram {
     font-family: 'Cormorant SC', 'Georgia', serif;
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     font-weight: 300;
     letter-spacing: 0.4em;
-    color: #722F37;
-    opacity: 0.4;
+    color: #c9a882;
+    opacity: 0.5;
 }
 
-/* Print styles for invitation */
+/* =============================================
+   PRINT STYLES
+   ============================================= */
 @media print {
+    @page {
+        size: 7in 5in;
+        margin: 0;
+    }
+
     .inv-body {
-        background: white;
+        background: none;
         padding: 0;
+        gap: 0;
         display: block;
     }
 
     .inv-card {
         box-shadow: none;
-        margin: 0;
-        width: 5in;
-        height: 7in;
+        width: 7in;
+        height: 5in;
+        page-break-after: always;
+        break-after: page;
     }
 
-    .inv-card::before {
-        border-color: rgba(139, 26, 43, 0.2);
+    .inv-card:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
+
+    .inv-side-photo {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .inv-side-text::before {
+        border-color: rgba(201, 168, 130, 0.35);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .inv-columns {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
     }
 }
 
-/* Screen responsive — scale card on smaller screens */
+/* =============================================
+   SCREEN RESPONSIVE
+   ============================================= */
 @media screen and (max-width: 600px) {
     .inv-body {
         padding: 1rem;
-        align-items: flex-start;
+        gap: 2rem;
     }
 
     .inv-card {
         width: 100%;
         height: auto;
-        aspect-ratio: 5 / 7;
+        aspect-ratio: 7 / 5;
     }
 
     .inv-inner-frame {
-        padding: 8% 6%;
-    }
-
-    .inv-photo-outer::before {
-        width: 22vw;
-        height: calc(22vw * 1.1);
-        max-width: 1.1in;
-        max-height: 1.21in;
-    }
-
-    .inv-photo-frame {
-        width: 19vw;
-        height: calc(19vw * 1.1);
-        max-width: 0.95in;
-        max-height: 1.05in;
+        padding: 5% 6%;
     }
 
     .inv-name {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .inv-ampersand {
-        font-size: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .inv-photo-names {
+        font-size: 1.05rem;
+    }
+
+    .inv-columns {
+        gap: 0;
+    }
+
+    .inv-col-left,
+    .inv-col-right {
+        padding: 0 3%;
+    }
+
+    .inv-qr {
+        width: 12vw;
+        height: 12vw;
+        max-width: 0.7in;
+        max-height: 0.7in;
     }
 }
 
