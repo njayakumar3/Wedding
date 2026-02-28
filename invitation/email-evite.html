@@ -31,11 +31,11 @@
         /* === RESET === */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #EDE7DF; }
+        body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; background-color: #EDE4E6; }
 
         /* Dark mode prevention */
         :root { color-scheme: light; supported-color-schemes: light; }
-        [data-ogsc] body, [data-ogsb] body { background-color: #EDE7DF !important; color: #4a3b27 !important; }
+        [data-ogsc] body, [data-ogsb] body { background-color: #EDE4E6 !important; color: #4a3b27 !important; }
 
         /* Links */
         a { color: #8a6a3e; text-decoration: none; }
@@ -53,16 +53,18 @@
             .couple-name { font-size: 28px !important; }
             .mobile-btn a { padding: 16px 36px !important; font-size: 14px !important; }
             .mobile-hide { display: none !important; }
+            .portrait-photo { width: 110px !important; height: 110px !important; }
         }
 
         @media only screen and (max-width: 480px) {
             .couple-name { font-size: 24px !important; }
             .mobile-pad { padding-left: 16px !important; padding-right: 16px !important; }
+            .portrait-photo { width: 100px !important; height: 100px !important; }
         }
     </style>
 </head>
 
-<body id="body" style="margin: 0; padding: 0; background-color: #EDE7DF; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-line-height-rule: exactly;">
+<body id="body" style="margin: 0; padding: 0; background-color: #EDE4E6; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-line-height-rule: exactly;">
 
     <!-- PREVIEW TEXT (hidden snippet in inbox) -->
     <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all;">
@@ -70,7 +72,7 @@
     </div>
 
     <!-- OUTER WRAPPER -->
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #EDE7DF;" bgcolor="#EDE7DF" id="yahoo">
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #EDE4E6;" bgcolor="#EDE4E6" id="yahoo">
         <tr>
             <td align="center" valign="top" style="padding: 32px 12px 48px;">
 
@@ -78,7 +80,7 @@
                 <!--[if (gte mso 9)|(IE)]>
                 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td>
                 <![endif]-->
-                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="email-container" style="max-width: 600px; background-color: #FFF8F0; border-collapse: collapse;" bgcolor="#FFF8F0">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="email-container" style="max-width: 600px; background-color: #FFF0F3; border-collapse: collapse;" bgcolor="#FFF0F3">
 
                     <!-- GOLD TOP BORDER -->
                     <tr>
@@ -87,7 +89,7 @@
 
                     <!-- DECORATIVE INNER FRAME TOP -->
                     <tr>
-                        <td style="padding: 28px 32px 0;" class="mobile-pad">
+                        <td style="padding: 24px 32px 0;" class="mobile-pad">
                             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
                                     <td style="border-top: 1px solid #ECDCC9; border-left: 1px solid #ECDCC9; border-right: 1px solid #ECDCC9; height: 12px; font-size: 1px; line-height: 1px;">&nbsp;</td>
@@ -98,14 +100,54 @@
 
                     <!-- TOP ORNAMENT -->
                     <tr>
-                        <td align="center" style="padding: 24px 40px 8px; font-size: 26px; color: #E7D4BF; line-height: 1;" class="mobile-pad">&#9884;</td>
+                        <td align="center" style="padding: 20px 40px 8px; line-height: 1;" class="mobile-pad">
+                            <!--[if mso]>
+                            <span style="font-size: 26px; color: #E7D4BF;">&#x269C;&#xFE0E;</span>
+                            <![endif]-->
+                            <!--[if !mso]><!-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="-0.864 -0.333 350 359" style="display: inline-block;">
+                                <path d="M297.69,147.804c-47.642-5.459-97.763,27.791-107.192,94.289c-0.329,2.318-0.605,4.685-0.824,7.076h-2.81c4.056-45.102,22.727-76.399,33.905-97.214c14.49-26.98,2.729-53.559-2.997-65.452C211.276,73.013,181.848,18.486,174.354,0c-7.494,18.486-36.702,73.013-43.198,86.503c-5.728,11.893-17.488,38.472-2.998,65.452c11.103,20.673,29.87,52.316,34.226,97.214h-3.208c-0.219-2.392-0.495-4.758-0.824-7.076c-9.43-66.499-59.551-99.748-107.192-94.289c-53.284,6.105-81.882,90.319,0.496,110.666c-13.399-24.813,7.443-69.477,55.583-44.167c15.656,8.232,26.561,21.383,31.072,34.866h-8.065c-7.608,0-13.776,4.469-13.776,9.983c0,5.514,6.168,9.983,13.776,9.983h9.817c-0.803,4.348-2.456,8.464-5.034,12.162c-11.416,16.377-49.649,7.444-28.31-28.286c-36.065-4.747-45.649,29.279-35.228,47.641c11.453,23.411,61.479,30.428,80.41-2.978c4.54-8.012,6.819-18.047,7.555-28.539h3.864c-0.033,7.932-0.53,16.224-1.59,24.887c-12.647,8.146-7.717,25.725-23.735,36.234c10.062,0.265,18.271-1.708,20.92-5.415c0,10.75,9.617,19.812,15.886,32.858c5.824-13.119,15.208-24.094,15.208-32.858c2.648,3.707,10.857,5.68,20.92,5.415c-14.687-9.01-8.898-25.516-23.261-37.306c-1.015-8.293-1.508-16.22-1.589-23.815h3.312c0.735,10.492,3.016,20.527,7.555,28.539c18.931,33.405,68.957,26.389,80.41,2.978c10.422-18.361,0.838-52.388-35.228-47.641c21.34,35.73-16.894,44.663-28.31,28.286c-2.577-3.698-4.23-7.814-5.033-12.162h10.572c7.608,0,13.776-4.47,13.776-9.983c0-5.515-6.168-9.983-13.776-9.983h-8.821c4.512-13.483,15.416-26.634,31.072-34.866c48.14-25.31,68.982,19.354,55.583,44.167C379.573,238.124,350.974,153.91,297.69,147.804z" fill="#E7D4BF"/>
+                            </svg>
+                            <!--<![endif]-->
+                        </td>
+                    </tr>
+
+                    <!-- FRAMED PORTRAIT (circular, like the printed invitation) -->
+                    <tr>
+                        <td align="center" style="padding: 4px 40px 12px;" class="mobile-pad">
+                            <!--[if mso]>
+                            <v:oval xmlns:v="urn:schemas-microsoft-com:vml" style="width:140px;height:140px;" stroked="true" strokecolor="#c9a882" strokeweight="2pt" fillcolor="#EDE1D3">
+                                <v:fill type="frame" src="../assets/email/invitation-photo.jpg" />
+                            </v:oval>
+                            <![endif]-->
+                            <!--[if !mso]><!-->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                    <td align="center" style="padding: 3px; border-radius: 50%; border: 1px solid rgba(201,168,130,0.25); line-height: 0;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="border-radius: 50%; border: 2px solid #c9a882; padding: 0; line-height: 0; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                                                    <img src="../assets/email/invitation-photo.jpg"
+                                                         alt="Nithya &amp; Luke"
+                                                         width="130" height="130"
+                                                         class="portrait-photo"
+                                                         style="width: 130px; height: 130px; border-radius: 50%; display: block; border: 0; outline: none; object-fit: cover; -ms-interpolation-mode: bicubic;"
+                                                         border="0">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--<![endif]-->
+                        </td>
                     </tr>
 
                     <!-- FAMILIES -->
                     <tr>
                         <td align="center" style="padding: 0 40px;" class="mobile-pad">
                             <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 14px; font-weight: 400; color: #4a3b27; letter-spacing: 0.04em; line-height: 1.6; mso-line-height-rule: exactly;">
-                                Jayakumar Govindan &amp; Sunitha Kandalam
+                                Jay Govindan &amp; Sunitha Jayakumar
                             </p>
                             <p style="margin: 4px 0; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 12px; font-style: italic; color: #8c7a5a; letter-spacing: 0.12em; mso-line-height-rule: exactly;">
                                 together with
@@ -173,14 +215,14 @@
                     <!-- DATE, TIME & VENUE -->
                     <tr>
                         <td align="center" style="padding: 8px 40px 4px;" class="mobile-pad">
-                            <p style="margin: 0 0 3px; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 16px; color: #4a3b27; letter-spacing: 0.06em; line-height: 1.5; mso-line-height-rule: exactly;">
-                                Saturday, the Sixth of June
+                            <p style="margin: 0 0 2px; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 14px; font-style: italic; color: #8c7a5a; letter-spacing: 0.08em; line-height: 1.4; mso-line-height-rule: exactly;">
+                                Saturday
                             </p>
-                            <p style="margin: 0 0 3px; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 14px; color: #6e5838; letter-spacing: 0.05em; line-height: 1.5; mso-line-height-rule: exactly;">
-                                Two Thousand and Twenty-Six
+                            <p style="margin: 0 0 2px; font-family: 'Cormorant SC', Georgia, 'Times New Roman', serif; font-size: 26px; font-weight: 300; color: #4a3b27; letter-spacing: 0.14em; line-height: 1.2; mso-line-height-rule: exactly;">
+                                June 6, 2026
                             </p>
-                            <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 14px; font-style: italic; color: #5c4830; line-height: 1.5; mso-line-height-rule: exactly;">
-                                at One O'Clock in the Afternoon
+                            <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 14px; font-style: italic; color: #5c4830; letter-spacing: 0.04em; line-height: 1.5; mso-line-height-rule: exactly;">
+                                1:00 in the Afternoon
                             </p>
                         </td>
                     </tr>
@@ -219,7 +261,7 @@
                     <tr>
                         <td align="center" style="padding: 4px 40px 16px;" class="mobile-pad">
                             <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 13px; font-style: italic; color: #5c4830; letter-spacing: 0.04em; line-height: 1.5; mso-line-height-rule: exactly;">
-                                Kindly respond by the fifteenth of May
+                                Kindly respond by May 1, 2026
                             </p>
                         </td>
                     </tr>
@@ -231,7 +273,7 @@
                             <!--[if mso]>
                             <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.lukeandnithya.com" style="height:48px;v-text-anchor:middle;width:240px;" arcsize="5%" strokecolor="#c9a882" fillcolor="#c9a882">
                             <w:anchorlock/>
-                            <center style="color:#FFF8F0;font-family:Georgia,serif;font-size:14px;font-weight:bold;letter-spacing:2px;">RSVP &amp; DETAILS</center>
+                            <center style="color:#FFF8F0;font-family:Georgia,serif;font-size:14px;font-weight:bold;letter-spacing:2px;">RSVP</center>
                             </v:roundrect>
                             <![endif]-->
                             <!--[if !mso]><!-->
@@ -241,7 +283,7 @@
                                         <a href="https://www.lukeandnithya.com"
                                            target="_blank"
                                            style="display: inline-block; padding: 14px 44px; font-family: 'Cormorant SC', Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 500; color: #FFF8F0; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: 2px solid #c9a882; border-radius: 2px; background-color: #c9a882; -webkit-text-size-adjust: none;">
-                                            RSVP &amp; Details
+                                            RSVP
                                         </a>
                                     </td>
                                 </tr>

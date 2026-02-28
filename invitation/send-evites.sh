@@ -118,6 +118,9 @@ validate_config() {
     fi
 }
 
+# Path to the invitation photo (relative to invitation/ directory)
+INVITATION_PHOTO="../assets/email/invitation-photo.jpg"
+
 send_email() {
     local recipient="$1"
     local html_content="$2"
@@ -125,14 +128,20 @@ send_email() {
     python3 -c "
 import smtplib
 import sys
+import os
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.mime.image import MIMEImage
 
-msg = MIMEMultipart('alternative')
+# Outer container: 'related' lets us embed CID images alongside HTML
+msg = MIMEMultipart('related')
 msg['Subject'] = '''${SUBJECT}'''
 msg['From'] = '${SENDER_NAME} <${SENDER_EMAIL}>'
 msg['To'] = '${recipient}'
 msg['Reply-To'] = '${SENDER_EMAIL}'
+
+# Inner container: 'alternative' holds plain text + HTML
+msg_alt = MIMEMultipart('alternative')
 
 # Plain text fallback for clients that don't render HTML
 text_part = MIMEText(
@@ -146,11 +155,25 @@ text_part = MIMEText(
     'plain', 'utf-8'
 )
 
-html_part = MIMEText(open('${HTML_FILE}', 'r', encoding='utf-8').read(), 'html', 'utf-8')
+# Read HTML and swap the local preview path for the CID reference
+html_content = open('${HTML_FILE}', 'r', encoding='utf-8').read()
+html_content = html_content.replace('../assets/email/invitation-photo.jpg', 'cid:invitation-photo')
+html_part = MIMEText(html_content, 'html', 'utf-8')
 
-# Attach plain text first, HTML second (email clients prefer the last one they can render)
-msg.attach(text_part)
-msg.attach(html_part)
+# Attach plain text first, HTML second (clients prefer last they can render)
+msg_alt.attach(text_part)
+msg_alt.attach(html_part)
+msg.attach(msg_alt)
+
+# Embed the invitation photo as an inline CID attachment
+photo_path = '${INVITATION_PHOTO}'
+if os.path.isfile(photo_path):
+    with open(photo_path, 'rb') as f:
+        img = MIMEImage(f.read(), _subtype='jpeg')
+    img.add_header('Content-ID', '<invitation-photo>')
+    img.add_header('Content-Disposition', 'inline', filename='invitation-photo.jpg')
+    img.add_header('X-Attachment-Id', 'invitation-photo')
+    msg.attach(img)
 
 try:
     server = smtplib.SMTP('${SMTP_SERVER}', ${SMTP_PORT})
