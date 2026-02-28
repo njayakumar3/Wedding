@@ -1,0 +1,15 @@
+# Wedding Guest Email List
+# One email address per line
+# Lines starting with # are ignored
+# Blank lines are ignored
+
+# ── Family ──
+# uncle@example.com
+# auntie@example.com
+
+# ── Friends ──
+# bestfriend@gmail.com
+# college-buddy@yahoo.com
+
+# ── Add your guests below ──
+

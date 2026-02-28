@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation — Option 4: Photo Header</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #d6cfc7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* ── Card — 5 × 7 in ── */
+        .card {
+            width: 5in;
+            height: 7in;
+            background: #FFF8F0;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 2px 6px rgba(0,0,0,.07),
+                0 12px 40px rgba(0,0,0,.10);
+            flex-shrink: 0;
+        }
+
+        /* ── Gold border ── */
+        .card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 6px solid #c9a882;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* ── Photo area — top 32% ── */
+        .photo-area {
+            position: relative;
+            width: 100%;
+            height: 32%;
+            overflow: hidden;
+        }
+
+        .photo-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            filter: sepia(0.12) saturate(1.05);
+        }
+
+        /* Gradient fade from photo into card */
+        .photo-area::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, transparent, #FFF8F0);
+            pointer-events: none;
+        }
+
+        /* ── Text parchment warmth ── */
+        .text-area {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0.08in 0.45in 0.2in;
+            background:
+                radial-gradient(ellipse at 50% 20%, rgba(201,168,130,.05) 0%, transparent 65%);
+        }
+
+        /* ── Decorative rule ── */
+        .rule {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 2.2in;
+            margin: 0.04in 0;
+        }
+        .rule-line {
+            flex: 1;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, #c9a882, transparent);
+            opacity: .5;
+        }
+        .rule-ornament {
+            color: #c9a882;
+            opacity: .55;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        /* ── Families ── */
+        .families { margin-bottom: 0.04in; }
+        .parent {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8.5pt;
+            font-weight: 400;
+            color: #5c4830;
+            letter-spacing: .03em;
+            line-height: 1.55;
+        }
+        .join {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8pt;
+            font-style: italic;
+            color: #8c7a5a;
+            letter-spacing: .08em;
+            margin: 0.02in 0;
+        }
+
+        /* ── Request ── */
+        .request {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8pt;
+            font-style: italic;
+            color: #6e5838;
+            letter-spacing: .03em;
+            line-height: 1.55;
+            margin-bottom: 0.04in;
+        }
+
+        /* ── Couple names ── */
+        .couple { margin: 0.03in 0; }
+        .name {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 19pt;
+            font-weight: 400;
+            color: #4a3b27;
+            letter-spacing: .08em;
+            line-height: 1.2;
+            margin: 0.01in 0;
+        }
+        .amp {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 14pt;
+            font-style: italic;
+            font-weight: 300;
+            color: #c9a882;
+            margin: 0.03in 0;
+            opacity: .85;
+        }
+
+        /* ── Date & venue ── */
+        .details { margin: 0.04in 0 0.03in; }
+        .day {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 9pt;
+            color: #4a3b27;
+            letter-spacing: .05em;
+        }
+        .year {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8.5pt;
+            color: #6e5838;
+            letter-spacing: .04em;
+            margin-top: 0.02in;
+        }
+        .time {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8.5pt;
+            font-style: italic;
+            color: #8c7a5a;
+            margin-top: 0.03in;
+        }
+
+        .venue { margin: 0.03in 0; }
+        .venue-addr {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8pt;
+            color: #5c4830;
+            letter-spacing: .03em;
+            line-height: 1.55;
+        }
+
+        .attire {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 7pt;
+            color: #8c7a5a;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 0.04in;
+        }
+
+        /* ── RSVP ── */
+        .rsvp-section { margin: 0.02in 0; }
+        .rsvp-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 7.5pt;
+            font-style: italic;
+            color: #6e5838;
+            letter-spacing: .03em;
+            margin-bottom: 0.06in;
+        }
+        .qr {
+            width: 0.45in;
+            height: 0.45in;
+            margin: 0 auto 0.04in;
+        }
+        .qr img { width: 100%; height: 100%; display: block; }
+        .url {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 7.5pt;
+            font-weight: 500;
+            color: #4a3b27;
+            letter-spacing: .1em;
+        }
+
+        /* ── Monogram ── */
+        .monogram {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 10pt;
+            font-weight: 300;
+            font-style: italic;
+            letter-spacing: .3em;
+            color: #c9a882;
+            opacity: .55;
+            margin-top: 0.04in;
+        }
+
+        /* ── Fleur-de-lis ── */
+        .fleur-de-lis {
+            color: #c9a882;
+            opacity: .5;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .card { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <!-- Photo header -->
+    <div class="photo-area">
+        <img src="../invitation_picture.png" alt="Nithya & Luke">
+    </div>
+
+    <!-- Text content -->
+    <div class="text-area">
+
+        <!-- Families -->
+        <div class="families">
+            <p class="parent">Jayakumar Govindan &amp; Sunitha Kandalam</p>
+            <p class="join">together with</p>
+            <p class="parent">David Robinson &amp; Dawnn Robinson</p>
+        </div>
+
+        <p class="request">request the honour of your presence<br>at the marriage of their children</p>
+
+        <!-- Rule -->
+        <div class="rule">
+            <span class="rule-line"></span>
+            <span class="rule-ornament">
+                <svg class="fleur-de-lis" viewBox="0 0 100 120" width="16" height="19">
+                    <path d="M50 0 C50 0 42 18 42 30 C42 38 45 42 50 48 C55 42 58 38 58 30 C58 18 50 0 50 0Z M50 48 C44 54 30 58 24 52 C18 46 22 36 30 34 C34 33 38 34 42 38 C40 30 34 22 28 18 C22 14 14 16 10 22 C4 30 8 44 18 52 C24 56 32 58 38 56 C30 64 22 68 16 66 C10 64 6 58 6 58 C6 58 4 72 16 78 C24 82 34 76 42 68 L42 68 C40 78 42 90 50 100 C58 90 60 78 58 68 L58 68 C66 76 76 82 84 78 C96 72 94 58 94 58 C94 58 90 64 84 66 C78 68 70 64 62 56 C68 58 76 56 82 52 C92 44 96 30 90 22 C86 16 78 14 72 18 C66 22 60 30 58 38 C62 34 66 33 70 34 C78 36 82 46 76 52 C70 58 56 54 50 48Z M46 100 L46 118 L50 120 L54 118 L54 100 C52 102 48 102 46 100Z" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="rule-line"></span>
+        </div>
+
+        <!-- Couple -->
+        <div class="couple">
+            <h1 class="name">Nithya Jayakumar</h1>
+            <p class="amp">&amp;</p>
+            <h1 class="name">Luke Robinson</h1>
+        </div>
+
+        <!-- Rule -->
+        <div class="rule">
+            <span class="rule-line"></span>
+            <span class="rule-ornament">
+                <svg class="fleur-de-lis" viewBox="0 0 100 120" width="16" height="19">
+                    <path d="M50 0 C50 0 42 18 42 30 C42 38 45 42 50 48 C55 42 58 38 58 30 C58 18 50 0 50 0Z M50 48 C44 54 30 58 24 52 C18 46 22 36 30 34 C34 33 38 34 42 38 C40 30 34 22 28 18 C22 14 14 16 10 22 C4 30 8 44 18 52 C24 56 32 58 38 56 C30 64 22 68 16 66 C10 64 6 58 6 58 C6 58 4 72 16 78 C24 82 34 76 42 68 L42 68 C40 78 42 90 50 100 C58 90 60 78 58 68 L58 68 C66 76 76 82 84 78 C96 72 94 58 94 58 C94 58 90 64 84 66 C78 68 70 64 62 56 C68 58 76 56 82 52 C92 44 96 30 90 22 C86 16 78 14 72 18 C66 22 60 30 58 38 C62 34 66 33 70 34 C78 36 82 46 76 52 C70 58 56 54 50 48Z M46 100 L46 118 L50 120 L54 118 L54 100 C52 102 48 102 46 100Z" fill="currentColor"/>
+                </svg>
+            </span>
+            <span class="rule-line"></span>
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+            <p class="day">Saturday, the Sixth of June</p>
+            <p class="year">Two Thousand and Twenty-Six</p>
+            <p class="time">at One O'Clock in the Afternoon</p>
+        </div>
+
+        <div class="venue">
+            <p class="venue-addr">1700 Buford Highway · Duluth, Georgia 30097</p>
+        </div>
+
+        <p class="attire">Formal Attire Requested</p>
+
+        <!-- Small rule -->
+        <div class="rule" style="width:1.4in;">
+            <span class="rule-line"></span>
+            <span class="rule-line"></span>
+        </div>
+
+        <!-- RSVP -->
+        <div class="rsvp-section">
+            <p class="rsvp-text">Kindly respond by the fifteenth of May</p>
+            <div class="qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.lukeandnithya.com&color=4A-3B-27&bgcolor=FF-F8-F0&margin=0" alt="QR Code">
+            </div>
+            <p class="url">www.lukeandnithya.com</p>
+        </div>
+
+        <p class="monogram">N &amp; L</p>
+    </div>
+</div>
+
+</body>
+</html>
