@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation — Option 3: Garden Botanical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #d6cfc7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* ── Card ── */
+        .card {
+            width: 5in;
+            height: 7in;
+            background: #FAF7F2;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 2px 6px rgba(0,0,0,.06),
+                0 12px 40px rgba(0,0,0,.09);
+            flex-shrink: 0;
+        }
+
+        /* Soft vellum warmth */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 50%, rgba(245,238,225,.6) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Botanical corner illustrations (SVG) ── */
+        .botanical {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .botanical svg {
+            width: 100%;
+            height: 100%;
+        }
+        .bot-tl { top: 0; left: 0; width: 2in; height: 2in; }
+        .bot-tr { top: 0; right: 0; width: 1.6in; height: 1.6in; transform: scaleX(-1); }
+        .bot-bl { bottom: 0; left: 0; width: 1.6in; height: 1.6in; transform: scaleY(-1); }
+        .bot-br { bottom: 0; right: 0; width: 2in; height: 2in; transform: scale(-1,-1); }
+
+        /* ── Content ── */
+        .content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0.7in 0.6in;
+            text-align: center;
+        }
+
+        /* ── Families ── */
+        .families { margin-bottom: 0.1in; }
+        .parent {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 9pt;
+            font-weight: 400;
+            color: #4A5D3A;
+            letter-spacing: .03em;
+            line-height: 1.6;
+        }
+        .join {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8.5pt;
+            font-style: italic;
+            color: #7A9468;
+            letter-spacing: .1em;
+            margin: 0.04in 0;
+        }
+
+        /* ── Request ── */
+        .request {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8.5pt;
+            font-style: italic;
+            color: #5C6E4E;
+            letter-spacing: .03em;
+            line-height: 1.6;
+            margin-bottom: 0.12in;
+        }
+
+        /* ── Leaf divider ── */
+        .leaf-rule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin: 0.06in 0;
+            width: 2.4in;
+        }
+        .leaf-line {
+            flex: 1;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, rgba(74,93,58,.3), transparent);
+        }
+        .leaf-icon {
+            color: #7A9468;
+            opacity: .6;
+            line-height: 1;
+        }
+
+        /* ── Couple ── */
+        .couple { margin: 0.1in 0; }
+        .name {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 22pt;
+            font-weight: 400;
+            font-style: italic;
+            color: #3A4A2E;
+            letter-spacing: .05em;
+            line-height: 1.2;
+            margin: 0.02in 0;
+        }
+        .amp {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 15pt;
+            font-weight: 300;
+            color: #7A9468;
+            margin: 0.05in 0;
+            opacity: .8;
+        }
+
+        /* ── Details ── */
+        .details { margin: 0.1in 0 0.06in; }
+        .day {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 10pt;
+            color: #3A4A2E;
+            letter-spacing: .06em;
+        }
+        .year {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 9pt;
+            color: #5C6E4E;
+            letter-spacing: .05em;
+            margin-top: 0.02in;
+        }
+        .time {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 9pt;
+            font-style: italic;
+            color: #5C6E4E;
+            margin-top: 0.04in;
+        }
+
+        .venue { margin: 0.08in 0; }
+        .venue-addr {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 8.5pt;
+            color: #4A5D3A;
+            letter-spacing: .04em;
+            line-height: 1.6;
+        }
+
+        .attire {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 7.5pt;
+            color: #7A9468;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 0.1in;
+        }
+
+        /* ── RSVP ── */
+        .rsvp-section { margin: 0.05in 0; }
+        .rsvp-text {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 8pt;
+            font-style: italic;
+            color: #5C6E4E;
+            letter-spacing: .04em;
+            margin-bottom: 0.12in;
+        }
+        .qr { width: 0.55in; height: 0.55in; margin: 0 auto 0.06in; }
+        .qr img { width: 100%; height: 100%; display: block; }
+        .url {
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 8pt;
+            font-weight: 500;
+            color: #3A4A2E;
+            letter-spacing: .1em;
+        }
+
+        /* ── Monogram ── */
+        .monogram {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 10pt;
+            font-style: italic;
+            letter-spacing: .35em;
+            color: #7A9468;
+            opacity: .4;
+            margin-top: 0.12in;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .card { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <!-- Botanical corner illustrations -->
+    <div class="botanical bot-tl">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Main branch -->
+            <path d="M-10 210 C20 170 40 140 55 110 C65 88 70 65 68 40 C67 25 62 12 55 2"
+                  stroke="#7A9468" stroke-width="0.8" fill="none" opacity=".35"/>
+            <!-- Leaves along main branch -->
+            <path d="M20 175 C25 168 18 158 12 162 C8 165 14 172 20 175Z" fill="#7A9468" opacity=".18"/>
+            <path d="M32 155 C38 146 30 138 24 142 C20 145 26 152 32 155Z" fill="#7A9468" opacity=".15"/>
+            <path d="M42 132 C48 124 42 114 36 118 C30 122 36 130 42 132Z" fill="#7A9468" opacity=".18"/>
+            <path d="M50 112 C56 102 50 94 44 98 C38 102 44 110 50 112Z" fill="#7A9468" opacity=".14"/>
+            <path d="M56 90 C62 82 56 72 50 76 C44 80 50 88 56 90Z" fill="#7A9468" opacity=".16"/>
+            <path d="M62 68 C66 58 58 50 54 55 C50 60 56 66 62 68Z" fill="#7A9468" opacity=".13"/>
+            <path d="M64 48 C68 40 62 32 58 36 C54 40 60 46 64 48Z" fill="#7A9468" opacity=".15"/>
+            <!-- Right-side leaves -->
+            <path d="M28 168 C22 160 28 150 34 154 C40 157 34 166 28 168Z" fill="#7A9468" opacity=".12"/>
+            <path d="M46 128 C40 118 48 110 52 115 C56 120 50 128 46 128Z" fill="#7A9468" opacity=".14"/>
+            <path d="M58 86 C52 78 60 70 64 74 C68 78 62 86 58 86Z" fill="#7A9468" opacity=".12"/>
+            <!-- Secondary vine -->
+            <path d="M-5 200 C15 180 25 162 30 145 C34 130 32 115 28 100"
+                  stroke="#7A9468" stroke-width="0.5" fill="none" opacity=".2"/>
+            <path d="M15 180 C18 174 14 168 10 170 C7 172 11 178 15 180Z" fill="#7A9468" opacity=".1"/>
+            <path d="M26 158 C30 150 24 144 20 148 C18 151 22 156 26 158Z" fill="#7A9468" opacity=".1"/>
+            <!-- Small berries / buds -->
+            <circle cx="55" cy="25" r="2" fill="#7A9468" opacity=".12"/>
+            <circle cx="48" cy="15" r="1.5" fill="#7A9468" opacity=".1"/>
+            <circle cx="30" cy="100" r="1.5" fill="#7A9468" opacity=".1"/>
+            <!-- Eucalyptus-style round leaves -->
+            <ellipse cx="68" cy="55" rx="6" ry="8" transform="rotate(-20 68 55)" fill="#7A9468" opacity=".08"/>
+            <ellipse cx="36" cy="148" rx="5" ry="7" transform="rotate(15 36 148)" fill="#7A9468" opacity=".08"/>
+        </svg>
+    </div>
+
+    <div class="botanical bot-tr">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-10 210 C20 170 40 140 55 110 C65 88 70 65 68 40 C67 25 62 12 55 2"
+                  stroke="#7A9468" stroke-width="0.8" fill="none" opacity=".3"/>
+            <path d="M20 175 C25 168 18 158 12 162 C8 165 14 172 20 175Z" fill="#7A9468" opacity=".15"/>
+            <path d="M42 132 C48 124 42 114 36 118 C30 122 36 130 42 132Z" fill="#7A9468" opacity=".14"/>
+            <path d="M56 90 C62 82 56 72 50 76 C44 80 50 88 56 90Z" fill="#7A9468" opacity=".12"/>
+            <path d="M64 48 C68 40 62 32 58 36 C54 40 60 46 64 48Z" fill="#7A9468" opacity=".12"/>
+            <circle cx="55" cy="25" r="2" fill="#7A9468" opacity=".1"/>
+        </svg>
+    </div>
+
+    <div class="botanical bot-bl">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-10 210 C20 170 40 140 55 110 C65 88 70 65 68 40 C67 25 62 12 55 2"
+                  stroke="#7A9468" stroke-width="0.8" fill="none" opacity=".3"/>
+            <path d="M32 155 C38 146 30 138 24 142 C20 145 26 152 32 155Z" fill="#7A9468" opacity=".13"/>
+            <path d="M50 112 C56 102 50 94 44 98 C38 102 44 110 50 112Z" fill="#7A9468" opacity=".12"/>
+            <path d="M62 68 C66 58 58 50 54 55 C50 60 56 66 62 68Z" fill="#7A9468" opacity=".11"/>
+            <circle cx="48" cy="15" r="1.5" fill="#7A9468" opacity=".1"/>
+        </svg>
+    </div>
+
+    <div class="botanical bot-br">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M-10 210 C20 170 40 140 55 110 C65 88 70 65 68 40 C67 25 62 12 55 2"
+                  stroke="#7A9468" stroke-width="0.8" fill="none" opacity=".35"/>
+            <path d="M20 175 C25 168 18 158 12 162 C8 165 14 172 20 175Z" fill="#7A9468" opacity=".16"/>
+            <path d="M32 155 C38 146 30 138 24 142 C20 145 26 152 32 155Z" fill="#7A9468" opacity=".14"/>
+            <path d="M42 132 C48 124 42 114 36 118 C30 122 36 130 42 132Z" fill="#7A9468" opacity=".16"/>
+            <path d="M50 112 C56 102 50 94 44 98 C38 102 44 110 50 112Z" fill="#7A9468" opacity=".12"/>
+            <path d="M56 90 C62 82 56 72 50 76 C44 80 50 88 56 90Z" fill="#7A9468" opacity=".14"/>
+            <path d="M62 68 C66 58 58 50 54 55 C50 60 56 66 62 68Z" fill="#7A9468" opacity=".12"/>
+            <path d="M64 48 C68 40 62 32 58 36 C54 40 60 46 64 48Z" fill="#7A9468" opacity=".13"/>
+            <path d="M28 168 C22 160 28 150 34 154 C40 157 34 166 28 168Z" fill="#7A9468" opacity=".1"/>
+            <path d="M46 128 C40 118 48 110 52 115 C56 120 50 128 46 128Z" fill="#7A9468" opacity=".12"/>
+            <path d="M58 86 C52 78 60 70 64 74 C68 78 62 86 58 86Z" fill="#7A9468" opacity=".1"/>
+            <path d="M-5 200 C15 180 25 162 30 145 C34 130 32 115 28 100"
+                  stroke="#7A9468" stroke-width="0.5" fill="none" opacity=".2"/>
+            <path d="M15 180 C18 174 14 168 10 170 C7 172 11 178 15 180Z" fill="#7A9468" opacity=".09"/>
+            <circle cx="55" cy="25" r="2" fill="#7A9468" opacity=".1"/>
+            <circle cx="48" cy="15" r="1.5" fill="#7A9468" opacity=".08"/>
+            <ellipse cx="68" cy="55" rx="6" ry="8" transform="rotate(-20 68 55)" fill="#7A9468" opacity=".07"/>
+            <ellipse cx="36" cy="148" rx="5" ry="7" transform="rotate(15 36 148)" fill="#7A9468" opacity=".07"/>
+        </svg>
+    </div>
+
+    <div class="content">
+
+        <!-- Families -->
+        <div class="families">
+            <p class="parent">Jayakumar Govindan &amp; Sunitha Kandalam</p>
+            <p class="join">together with</p>
+            <p class="parent">David Robinson &amp; Dawnn Robinson</p>
+        </div>
+
+        <p class="request">request the honour of your presence<br>at the marriage of their children</p>
+
+        <!-- Leaf divider -->
+        <div class="leaf-rule">
+            <span class="leaf-line"></span>
+            <span class="leaf-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2 C12 2 4 8 4 14 C4 18.4 7.6 22 12 22 C16.4 22 20 18.4 20 14 C20 8 12 2 12 2Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                    <path d="M12 6 L12 18 M12 10 L8 14 M12 13 L16 17" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                </svg>
+            </span>
+            <span class="leaf-line"></span>
+        </div>
+
+        <!-- Couple -->
+        <div class="couple">
+            <h1 class="name">Nithya Jayakumar</h1>
+            <p class="amp">&amp;</p>
+            <h1 class="name">Luke Robinson</h1>
+        </div>
+
+        <!-- Leaf divider -->
+        <div class="leaf-rule">
+            <span class="leaf-line"></span>
+            <span class="leaf-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2 C12 2 4 8 4 14 C4 18.4 7.6 22 12 22 C16.4 22 20 18.4 20 14 C20 8 12 2 12 2Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                    <path d="M12 6 L12 18 M12 10 L8 14 M12 13 L16 17" stroke="currentColor" stroke-width="0.5" fill="none"/>
+                </svg>
+            </span>
+            <span class="leaf-line"></span>
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+            <p class="day">Saturday, the Sixth of June</p>
+            <p class="year">Two Thousand and Twenty-Six</p>
+            <p class="time">at One O'Clock in the Afternoon</p>
+        </div>
+
+        <div class="venue">
+            <p class="venue-addr">1700 Buford Highway · Duluth, Georgia 30097</p>
+        </div>
+
+        <p class="attire">Formal Attire Requested</p>
+
+        <!-- Small divider -->
+        <div class="leaf-rule" style="width: 1.4in;">
+            <span class="leaf-line"></span>
+            <span class="leaf-icon" style="opacity:.4;">
+                <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="2"/>
+                </svg>
+            </span>
+            <span class="leaf-line"></span>
+        </div>
+
+        <!-- RSVP -->
+        <div class="rsvp-section">
+            <p class="rsvp-text">Kindly respond by the fifteenth of May</p>
+            <div class="qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.lukeandnithya.com&color=3A-4A-2E&bgcolor=FA-F7-F2&margin=0" alt="QR Code">
+            </div>
+            <p class="url">www.lukeandnithya.com</p>
+        </div>
+
+        <p class="monogram">N &amp; L</p>
+    </div>
+</div>
+
+</body>
+</html>

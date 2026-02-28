@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation — Option 1: Classic Elegant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ── Page / Preview ── */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #faf7f2;
+            color: #2c2c2c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* ── Card — 5 × 7 in ── */
+        .card {
+            width: 5in;
+            height: 7in;
+            background: #FFFDF8;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 2px 6px rgba(0,0,0,.07),
+                0 12px 40px rgba(0,0,0,.09);
+            flex-shrink: 0;
+        }
+
+        /* Subtle warm parchment texture */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 20%, rgba(180,145,90,.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 80%, rgba(180,145,90,.05) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Outer decorative border ── */
+        .border-outer {
+            position: absolute;
+            inset: 8px;
+            border: 1.5px solid #B4915A;
+            opacity: .45;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ── Inner decorative border ── */
+        .border-inner {
+            position: absolute;
+            inset: 14px;
+            border: 0.5px solid #B4915A;
+            opacity: .3;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* ── Corner ornaments (CSS-drawn) ── */
+        .corner {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .corner svg { width: 100%; height: 100%; }
+        .corner-tl { top: 6px; left: 6px; }
+        .corner-tr { top: 6px; right: 6px; transform: scaleX(-1); }
+        .corner-bl { bottom: 6px; left: 6px; transform: scaleY(-1); }
+        .corner-br { bottom: 6px; right: 6px; transform: scale(-1,-1); }
+
+        /* ── Content frame ── */
+        .content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0.55in 0.5in;
+            text-align: center;
+        }
+
+        /* ── Top ornamental flourish ── */
+        .flourish-top {
+            color: #B4915A;
+            opacity: .55;
+            margin-bottom: 0.18in;
+            line-height: 1;
+        }
+
+        /* ── Family names ── */
+        .families {
+            margin-bottom: 0.12in;
+        }
+        .parent {
+            font-size: 9.5pt;
+            font-weight: 400;
+            color: #4A3520;
+            letter-spacing: .04em;
+            line-height: 1.55;
+        }
+        .join {
+            font-size: 8pt;
+            font-style: italic;
+            color: #8C7050;
+            letter-spacing: .14em;
+            text-transform: lowercase;
+            margin: 0.03in 0;
+        }
+
+        /* ── Request line ── */
+        .request {
+            font-size: 8.5pt;
+            font-style: italic;
+            color: #5C4530;
+            letter-spacing: .03em;
+            line-height: 1.5;
+            margin-bottom: 0.1in;
+        }
+
+        /* ── Decorative rule ── */
+        .rule {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0.06in 0;
+            width: 2.6in;
+        }
+        .rule-line {
+            flex: 1;
+            height: 0.5px;
+            background: linear-gradient(90deg, transparent, #B4915A, transparent);
+            opacity: .45;
+        }
+        .rule-diamond {
+            width: 5px;
+            height: 5px;
+            border: 0.5px solid #B4915A;
+            transform: rotate(45deg);
+            opacity: .5;
+            flex-shrink: 0;
+        }
+
+        /* ── Couple names ── */
+        .couple { margin: 0.08in 0; }
+        .name {
+            font-family: 'Cinzel', 'Cormorant SC', Georgia, serif;
+            font-size: 20pt;
+            font-weight: 400;
+            color: #7A5A28;
+            letter-spacing: .1em;
+            line-height: 1.2;
+            margin: 0.02in 0;
+        }
+        .amp {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 16pt;
+            font-style: italic;
+            font-weight: 300;
+            color: #c9a882;
+            margin: 0.04in 0;
+            opacity: .85;
+        }
+
+        /* ── Date & venue ── */
+        .details { margin: 0.1in 0 0.06in; }
+        .day {
+            font-size: 10pt;
+            color: #4A3520;
+            letter-spacing: .06em;
+        }
+        .year {
+            font-size: 9pt;
+            color: #5C4530;
+            letter-spacing: .05em;
+        }
+        .time {
+            font-size: 9pt;
+            font-style: italic;
+            color: #8C7050;
+            margin-top: 0.04in;
+        }
+
+        .venue {
+            margin: 0.1in 0;
+        }
+        .venue-addr {
+            font-size: 9pt;
+            color: #3E2723;
+            letter-spacing: .04em;
+            line-height: 1.5;
+        }
+
+        .attire {
+            font-size: 7.5pt;
+            color: #8D7050;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            font-style: italic;
+            margin-bottom: 0.08in;
+        }
+
+        /* ── RSVP / QR ── */
+        .rsvp-section { margin: 0.06in 0; }
+        .rsvp-text {
+            font-size: 8pt;
+            font-style: italic;
+            color: #5C4530;
+            letter-spacing: .04em;
+            margin-bottom: 0.12in;
+        }
+        .qr { width: 0.6in; height: 0.6in; margin: 0 auto 0.08in; }
+        .qr img { width: 100%; height: 100%; display: block; }
+        .url {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 8pt;
+            font-weight: 500;
+            color: #3E2723;
+            letter-spacing: .12em;
+        }
+
+        /* ── Monogram footer ── */
+        .monogram {
+            font-family: 'Cinzel Decorative', 'Cinzel', Georgia, serif;
+            font-size: 11pt;
+            font-weight: 400;
+            letter-spacing: .5em;
+            color: #B4915A;
+            opacity: .45;
+            margin-top: 0.1in;
+        }
+
+        /* ── Print ── */
+        @media print {
+            body { background: white; padding: 0; }
+            .card { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <!-- Borders -->
+    <div class="border-outer"></div>
+    <div class="border-inner"></div>
+
+    <!-- Corner ornaments -->
+    <div class="corner corner-tl">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 58 C2 58 2 30 2 16 C2 8 8 2 16 2 C30 2 58 2 58 2" stroke="#B4915A" stroke-width="0.8" fill="none" opacity=".5"/>
+            <path d="M10 58 C10 58 10 30 10 20 C10 14 14 10 20 10 C30 10 58 10 58 10" stroke="#B4915A" stroke-width="0.4" fill="none" opacity=".3"/>
+            <circle cx="6" cy="6" r="1.5" fill="#B4915A" opacity=".35"/>
+        </svg>
+    </div>
+    <div class="corner corner-tr">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 58 C2 58 2 30 2 16 C2 8 8 2 16 2 C30 2 58 2 58 2" stroke="#B4915A" stroke-width="0.8" fill="none" opacity=".5"/>
+            <path d="M10 58 C10 58 10 30 10 20 C10 14 14 10 20 10 C30 10 58 10 58 10" stroke="#B4915A" stroke-width="0.4" fill="none" opacity=".3"/>
+            <circle cx="6" cy="6" r="1.5" fill="#B4915A" opacity=".35"/>
+        </svg>
+    </div>
+    <div class="corner corner-bl">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 58 C2 58 2 30 2 16 C2 8 8 2 16 2 C30 2 58 2 58 2" stroke="#B4915A" stroke-width="0.8" fill="none" opacity=".5"/>
+            <path d="M10 58 C10 58 10 30 10 20 C10 14 14 10 20 10 C30 10 58 10 58 10" stroke="#B4915A" stroke-width="0.4" fill="none" opacity=".3"/>
+            <circle cx="6" cy="6" r="1.5" fill="#B4915A" opacity=".35"/>
+        </svg>
+    </div>
+    <div class="corner corner-br">
+        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 58 C2 58 2 30 2 16 C2 8 8 2 16 2 C30 2 58 2 58 2" stroke="#B4915A" stroke-width="0.8" fill="none" opacity=".5"/>
+            <path d="M10 58 C10 58 10 30 10 20 C10 14 14 10 20 10 C30 10 58 10 58 10" stroke="#B4915A" stroke-width="0.4" fill="none" opacity=".3"/>
+            <circle cx="6" cy="6" r="1.5" fill="#B4915A" opacity=".35"/>
+        </svg>
+    </div>
+
+    <div class="content">
+        <!-- Top flourish -->
+        <div class="flourish-top" aria-hidden="true">
+            <svg width="80" height="20" viewBox="0 0 120 30" fill="none">
+                <path d="M60 18 C60 18 50 20 35 20 C20 20 10 26 2 22 C-2 20 2 14 8 14 C14 14 20 18 30 18 C40 18 50 10 60 2 C70 10 80 18 90 18 C100 18 106 14 112 14 C118 14 122 20 118 22 C110 26 100 20 85 20 C70 20 60 18 60 18Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                <circle cx="60" cy="15" r="1.5" fill="currentColor"/>
+            </svg>
+        </div>
+
+        <!-- Families -->
+        <div class="families">
+            <p class="parent">Jayakumar Govindan &amp; Sunitha Kandalam</p>
+            <p class="join">together with</p>
+            <p class="parent">David Robinson &amp; Dawnn Robinson</p>
+        </div>
+
+        <p class="request">request the honour of your presence<br>at the marriage of their children</p>
+
+        <!-- Rule -->
+        <div class="rule">
+            <span class="rule-line"></span>
+            <span class="rule-diamond"></span>
+            <span class="rule-line"></span>
+        </div>
+
+        <!-- Couple -->
+        <div class="couple">
+            <h1 class="name">Nithya Jayakumar</h1>
+            <p class="amp">&amp;</p>
+            <h1 class="name">Luke Robinson</h1>
+        </div>
+
+        <!-- Rule -->
+        <div class="rule">
+            <span class="rule-line"></span>
+            <span class="rule-diamond"></span>
+            <span class="rule-line"></span>
+        </div>
+
+        <!-- Details -->
+        <div class="details">
+            <p class="day">Saturday, the Sixth of June</p>
+            <p class="year">Two Thousand and Twenty-Six</p>
+            <p class="time">at One O'Clock in the Afternoon</p>
+        </div>
+
+        <div class="venue">
+            <p class="venue-addr">1700 Buford Highway · Duluth, Georgia 30097</p>
+        </div>
+
+        <p class="attire">Formal Attire Requested</p>
+
+        <!-- Small rule -->
+        <div class="rule" style="width:1.6in;">
+            <span class="rule-line"></span>
+            <span class="rule-diamond"></span>
+            <span class="rule-line"></span>
+        </div>
+
+        <!-- RSVP -->
+        <div class="rsvp-section">
+            <p class="rsvp-text">Kindly respond by the fifteenth of May</p>
+            <div class="qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.lukeandnithya.com&color=3E-27-23&bgcolor=FF-FD-F8&margin=0" alt="QR Code">
+            </div>
+            <p class="url">www.lukeandnithya.com</p>
+        </div>
+
+        <!-- Monogram -->
+        <p class="monogram">N &amp; L</p>
+    </div>
+</div>
+
+</body>
+</html>

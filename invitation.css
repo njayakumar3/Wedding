@@ -1,0 +1,412 @@
+/* ============================
+   Invitation Card (Print)
+   ============================ */
+
+/* Override body for invitation page */
+.inv-body {
+    background: #e8e0d8;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-image: none;
+}
+
+.inv-body::before {
+    display: none;
+}
+
+/* Card — 5×7 inch standard invitation */
+.inv-card {
+    width: 5in;
+    height: 7in;
+    background: #FFF8F0;
+    box-shadow:
+        0 1px 3px rgba(0,0,0,0.06),
+        0 8px 30px rgba(0,0,0,0.08),
+        0 25px 60px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Subtle border tint on card edge */
+.inv-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(139, 26, 43, 0.12);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Inner decorative frame */
+.inv-inner-frame {
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(139, 26, 43, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.28in 0.32in;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Corner accents on inner frame */
+.inv-inner-frame::before,
+.inv-inner-frame::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-color: rgba(139, 26, 43, 0.25);
+    border-style: solid;
+}
+.inv-inner-frame::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+}
+.inv-inner-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+}
+
+/* Top ornament */
+.inv-ornament {
+    margin: 0 0 0.15rem;
+    line-height: 1;
+}
+
+.inv-ornament .fleur-de-lis {
+    opacity: 0.4;
+}
+
+/* Photo — artful oval portrait with ornate double frame */
+.inv-photo-outer {
+    margin: 0.1rem auto 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Decorative outer ring */
+.inv-photo-outer::before {
+    content: '';
+    position: absolute;
+    width: 1.1in;
+    height: 1.21in;
+    border-radius: 50%;
+    border: 1px solid rgba(139, 26, 43, 0.13);
+    pointer-events: none;
+}
+
+.inv-photo-frame {
+    width: 0.95in;
+    height: 1.05in;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(139, 26, 43, 0.22);
+    box-shadow:
+        0 0 0 3px rgba(255, 248, 240, 0.95),
+        0 0 0 4px rgba(139, 26, 43, 0.12),
+        0 3px 12px rgba(114, 47, 55, 0.10),
+        0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Soft vignette overlay on photo */
+.inv-photo-vignette {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px 8px rgba(255, 248, 240, 0.35);
+}
+
+.inv-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(0.9) brightness(1.02) sepia(0.06);
+}
+
+/* Family names */
+.inv-families {
+    margin-bottom: 0.15rem;
+}
+
+.inv-parent {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.62rem;
+    font-weight: 400;
+    color: #4A2630;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+
+.inv-connector {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.6rem;
+    font-style: italic;
+    color: #8C6A72;
+    margin: 0;
+}
+
+.inv-families-join {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.52rem;
+    font-style: italic;
+    color: #8C6A72;
+    letter-spacing: 0.12em;
+    text-transform: lowercase;
+    margin: 0.06rem 0;
+}
+
+/* Request line */
+.inv-request {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.56rem;
+    font-style: italic;
+    color: #5C3640;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.1rem;
+}
+
+/* Decorative dividers */
+.inv-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.12rem auto;
+    width: 2.2in;
+}
+
+.inv-divider-sm {
+    width: 1.4in;
+}
+
+.inv-divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 26, 43, 0.25), transparent);
+}
+
+.inv-divider-diamond {
+    width: 4px;
+    height: 4px;
+    background: rgba(139, 26, 43, 0.28);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+/* Couple names */
+.inv-couple {
+    margin: 0.1rem 0;
+}
+
+.inv-name {
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #722F37;
+    letter-spacing: 0.08em;
+    font-variant: small-caps;
+    line-height: 1.15;
+    margin: 0.04rem 0;
+}
+
+.inv-ampersand {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: #C94C5A;
+    margin: 0.06rem 0;
+    opacity: 0.85;
+}
+
+/* Date & details */
+.inv-details {
+    margin: 0.15rem 0 0.1rem;
+}
+
+.inv-day {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.68rem;
+    color: #4A2630;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.04rem;
+}
+
+.inv-year {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.6rem;
+    color: #6E4850;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.04rem;
+}
+
+.inv-time {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.6rem;
+    font-style: italic;
+    color: #5C3640;
+}
+
+/* Venue */
+.inv-venue {
+    margin: 0.12rem 0 0.15rem;
+}
+
+.inv-venue-address {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.6rem;
+    color: #4A2630;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+
+/* Attire */
+.inv-attire {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.5rem;
+    color: #8C6A72;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 0.1rem;
+}
+
+/* Website / QR section */
+.inv-website-section {
+    margin: 0.1rem 0;
+}
+
+.inv-rsvp-line {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.52rem;
+    font-style: italic;
+    color: #5C3640;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.18rem;
+}
+
+.inv-qr {
+    margin: 0.08rem auto;
+    width: 0.55in;
+    height: 0.55in;
+}
+
+.inv-qr-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.inv-url {
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: #722F37;
+    letter-spacing: 0.1em;
+    margin-top: 0.15rem;
+}
+
+.inv-url-note {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 0.48rem;
+    font-style: italic;
+    color: #8C6A72;
+    letter-spacing: 0.06em;
+    margin-top: 0.08rem;
+}
+
+/* Footer monogram */
+.inv-footer {
+    margin-top: 0.15rem;
+}
+
+.inv-monogram {
+    font-family: 'Cormorant SC', 'Georgia', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    color: #722F37;
+    opacity: 0.4;
+}
+
+/* Print styles for invitation */
+@media print {
+    .inv-body {
+        background: white;
+        padding: 0;
+        display: block;
+    }
+
+    .inv-card {
+        box-shadow: none;
+        margin: 0;
+        width: 5in;
+        height: 7in;
+    }
+
+    .inv-card::before {
+        border-color: rgba(139, 26, 43, 0.2);
+    }
+}
+
+/* Screen responsive — scale card on smaller screens */
+@media screen and (max-width: 600px) {
+    .inv-body {
+        padding: 1rem;
+        align-items: flex-start;
+    }
+
+    .inv-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 5 / 7;
+    }
+
+    .inv-inner-frame {
+        padding: 8% 6%;
+    }
+
+    .inv-photo-outer::before {
+        width: 22vw;
+        height: calc(22vw * 1.1);
+        max-width: 1.1in;
+        max-height: 1.21in;
+    }
+
+    .inv-photo-frame {
+        width: 19vw;
+        height: calc(19vw * 1.1);
+        max-width: 0.95in;
+        max-height: 1.05in;
+    }
+
+    .inv-name {
+        font-size: 1.1rem;
+    }
+
+    .inv-ampersand {
+        font-size: 1rem;
+    }
+}
+
+/* ============================
+   End Invitation Page
+   ============================ */
+
