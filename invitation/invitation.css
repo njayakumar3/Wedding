@@ -115,13 +115,13 @@
 /* Inner decorative frame */
 .inv-inner-frame {
     position: absolute;
-    inset: 12px;
+    inset: 10px;
     border: 1px solid rgba(201, 168, 130, 0.30);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 0.15in 0.4in;
+    padding: 0.2in 0.35in;
     text-align: center;
     overflow: hidden;
 }
@@ -149,44 +149,45 @@
 
 /* Top ornament */
 .inv-ornament {
-    margin: 0 0 0.22rem;
+    margin: 0;
     line-height: 1;
     color: rgba(201, 168, 130, 0.55);
 }
 
 /* Family names */
 .inv-families {
-    margin-bottom: 0.18rem;
+    margin: 0;
 }
 
 .inv-parent {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.85rem;
+    font-size: 12pt;
     font-weight: 400;
     color: #3A2024;
-    letter-spacing: 0.04em;
-    line-height: 1.45;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
     margin: 0;
 }
 
 .inv-families-join {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.71rem;
+    font-size: 10.5pt;
     font-style: italic;
     color: #8c7a5a;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: lowercase;
-    margin: 0.04rem 0;
+    margin: 1pt 0;
 }
 
 /* Request line */
 .inv-request {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.75rem;
+    font-size: 11pt;
     font-style: italic;
     color: #5c4830;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.16rem;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
+    margin: 0;
 }
 
 /* Decorative dividers */
@@ -194,9 +195,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    margin: 0.18rem auto;
-    width: 3.2in;
+    gap: 0.4rem;
+    margin: 0;
+    width: 4.5in;
 }
 
 .inv-divider-line {
@@ -215,32 +216,31 @@
 
 /* Couple names */
 .inv-couple {
-    margin: 0.16rem 0;
+    margin: 0;
 }
 
 .inv-name {
     font-family: 'Cormorant SC', 'Georgia', serif;
-    font-size: 1.81rem;
+    font-size: 24pt;
     font-weight: 300;
     color: #4a3b27;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     font-variant: small-caps;
     line-height: 1.15;
-    margin: 0.03rem 0;
+    margin: 0;
 }
 
 .inv-ampersand {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 1.21rem;
+    font-size: 16pt;
     font-style: italic;
     font-weight: 300;
     color: #c9a882;
-    margin: 0.04rem 0;
-    opacity: 0.8;
+    margin: 1pt 0;
 }
 
 /* =============================================
-   TWO-COLUMN BOTTOM: Details + RSVP
+   TWO-COLUMN BOTTOM — fills landscape width
    ============================================= */
 .inv-columns {
     display: flex;
@@ -248,66 +248,58 @@
     justify-content: center;
     gap: 0;
     width: 100%;
-    margin-top: 0.14rem;
 }
 
 .inv-col-left,
 .inv-col-right {
     flex: 1;
     text-align: center;
-    padding: 0 0.2in;
+    padding: 0 0.25in;
 }
 
 .inv-col-divider {
     width: 1px;
-    height: 1.15in;
+    height: 1.1in;
     background: linear-gradient(to bottom, transparent, rgba(201, 168, 130, 0.35), transparent);
     flex-shrink: 0;
 }
 
 .inv-col-spacer {
-    height: 0.18rem;
+    height: 0.06in;
 }
 
 /* Date & details (left column) */
 .inv-day {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.87rem;
+    font-size: 13pt;
     color: #3A2024;
-    letter-spacing: 0.06em;
-    margin: 0 0 0.02rem;
-}
-
-.inv-year {
-    font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.81rem;
-    color: #6e5838;
-    letter-spacing: 0.05em;
-    margin: 0 0 0.02rem;
+    letter-spacing: 0.04em;
+    margin: 0;
+    line-height: 1.35;
 }
 
 .inv-time {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.81rem;
+    font-size: 12pt;
     font-style: italic;
     color: #5c4830;
     margin: 0;
+    line-height: 1.35;
 }
 
-/* Venue */
 .inv-venue-line {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.81rem;
+    font-size: 11.5pt;
     color: #3A2024;
-    letter-spacing: 0.04em;
-    line-height: 1.45;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
     margin: 0;
 }
 
 /* Attire */
 .inv-attire {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.65rem;
+    font-size: 8.5pt;
     color: #8c7a5a;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -315,21 +307,21 @@
     margin: 0;
 }
 
-/* RSVP / QR (right column) */
+/* RSVP (right column) */
 .inv-rsvp-line {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
-    font-size: 0.75rem;
+    font-size: 12pt;
     font-style: italic;
     color: #5c4830;
-    letter-spacing: 0.04em;
-    margin: 0 0 0.12rem;
-    line-height: 1.5;
+    letter-spacing: 0.03em;
+    margin: 0 0 0.06in;
+    line-height: 1.4;
 }
 
 .inv-qr {
-    margin: 0 auto 0.1rem;
-    width: 0.8in;
-    height: 0.8in;
+    margin: 0 auto 0.05in;
+    width: 0.75in;
+    height: 0.75in;
 }
 
 .inv-qr-img {
@@ -340,25 +332,23 @@
 
 .inv-url {
     font-family: 'Cormorant SC', 'Georgia', serif;
-    font-size: 0.69rem;
+    font-size: 10pt;
     font-weight: 500;
     color: #8a6a3e;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     margin: 0;
 }
 
-/* Footer monogram */
-.inv-footer {
-    margin-top: 0.16rem;
-}
-
+/* Monogram */
 .inv-monogram {
-    font-family: 'Cormorant SC', 'Georgia', serif;
-    font-size: 0.95rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 12pt;
     font-weight: 300;
-    letter-spacing: 0.4em;
-    color: #c9a882;
-    opacity: 0.5;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    color: #8a6a3e;
+    opacity: 0.7;
+    margin: 0;
 }
 
 /* =============================================
@@ -423,15 +413,15 @@
     }
 
     .inv-inner-frame {
-        padding: 5% 6%;
+        padding: 3% 4%;
     }
 
     .inv-name {
-        font-size: 1rem;
+        font-size: 5vw;
     }
 
     .inv-ampersand {
-        font-size: 0.8rem;
+        font-size: 3.5vw;
     }
 
     .inv-photo-names {
@@ -448,10 +438,10 @@
     }
 
     .inv-qr {
-        width: 12vw;
-        height: 12vw;
-        max-width: 0.7in;
-        max-height: 0.7in;
+        width: 10vw;
+        height: 10vw;
+        max-width: 0.75in;
+        max-height: 0.75in;
     }
 }
 
