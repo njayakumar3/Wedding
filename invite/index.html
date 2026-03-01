@@ -1,3 +1,4 @@
+<!-- ═══ VIRTUAL INVITE — sent via link / text / email ═══ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,16 +47,18 @@
         /* ── Card Wrapper ── */
         .card-wrapper {
             width: 100%;
-            max-width: 440px;
-            padding: 28px 16px;
+            max-width: 560px;
+            padding: 24px 16px;
         }
 
         .card {
-            background: #FFF7F8;
+            background: linear-gradient(180deg, #FFF8F9 0%, #FFF6F4 40%, #FFF8F9 100%);
             border: 1px solid #E8CDD2;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+            box-shadow:
+                0 8px 40px rgba(0,0,0,0.07),
+                0 1px 3px rgba(0,0,0,0.04);
         }
 
         .card::before,
@@ -63,44 +66,64 @@
             content: '';
             display: block;
             height: 3px;
-            background: linear-gradient(90deg, #E8CDD2, #c9a882, #E8CDD2);
+            background: linear-gradient(90deg, transparent, #E8CDD2 15%, #c9a882 50%, #E8CDD2 85%, transparent);
         }
 
         .card-inner {
-            margin: 16px 20px;
-            border: 1px solid #F0DDE0;
-            padding: 28px 24px 24px;
+            margin: 18px 26px;
+            border: 1px solid #EDDFE2;
+            box-shadow: 0 0 0 5px #FFF8F9, 0 0 0 6px #F3E4E7;
+            padding: 32px 36px 28px;
             text-align: center;
         }
 
         /* ── Ornament ── */
-        .ornament { color: #E0C5CA; margin-bottom: 4px; }
+        .ornament {
+            color: #DFC3C9;
+            margin-bottom: 14px;
+        }
         .ornament svg { display: inline-block; }
 
-        /* ── Families & Request ── */
-        .families { margin-bottom: 2px; }
-        .parent-name {
-            font-size: 13px;
-            font-weight: 400;
-            color: #5c4a3a;
-            letter-spacing: 0.03em;
-            line-height: 1.5;
+        /* ── Portrait Photo ── */
+        .portrait-wrap {
+            margin-bottom: 18px;
         }
-        .together {
-            font-size: 11px;
-            font-style: italic;
-            color: #9c8a7a;
-            letter-spacing: 0.1em;
-            margin: 1px 0;
+        .portrait-ring {
+            display: inline-block;
+            padding: 4px;
+            border-radius: 50%;
+            border: 1px solid rgba(201,168,130,0.3);
         }
-        .request {
-            font-size: 12.5px;
+        .portrait-img {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            border: 2px solid #D4B0B8;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 3px 18px rgba(0,0,0,0.08);
+        }
+
+        /* ── Couple Names ── */
+        .names-block {
+            margin-bottom: 16px;
+        }
+        .couple-name {
+            font-family: 'Cormorant SC', Georgia, 'Times New Roman', serif;
+            font-size: 27px;
+            font-weight: 300;
+            color: #8a6a3e;
+            letter-spacing: 0.08em;
+            line-height: 1.15;
+        }
+        .ampersand {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 20px;
             font-style: italic;
-            color: #6b5844;
-            letter-spacing: 0.03em;
+            font-weight: 300;
+            color: #c9a882;
             line-height: 1.5;
-            margin-top: 4px;
-            margin-bottom: 2px;
+            margin: 0;
         }
 
         /* ── Divider ── */
@@ -108,103 +131,117 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin: 8px auto;
-            padding: 0 16px;
+            gap: 14px;
+            margin: 16px auto;
+            padding: 0 24px;
         }
         .divider-line {
             flex: 1;
-            max-width: 60px;
+            max-width: 72px;
             height: 1px;
-            background: #E8D5D9;
+            background: linear-gradient(90deg, transparent, #E0CDD1 30%, #E0CDD1 70%, transparent);
         }
         .divider-diamond {
-            width: 4px;
-            height: 4px;
+            width: 5px;
+            height: 5px;
             background: #D4B0B8;
             transform: rotate(45deg);
             flex-shrink: 0;
         }
 
-        /* ── Couple Names ── */
-        .couple-name {
-            font-family: 'Cormorant SC', Georgia, 'Times New Roman', serif;
-            font-size: 30px;
-            font-weight: 300;
-            color: #8a6a3e;
-            letter-spacing: 0.07em;
-            line-height: 1.15;
+        /* ── Families & Request ── */
+        .families-block {
+            margin-bottom: 18px;
         }
-        .ampersand {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 24px;
+        .parent-name {
+            font-size: 14px;
+            font-weight: 400;
+            color: #5c4a3a;
+            letter-spacing: 0.03em;
+            line-height: 1.55;
+        }
+        .together {
+            font-size: 11.5px;
             font-style: italic;
-            font-weight: 300;
-            color: #c9a882;
-            margin: 0;
-        }
-
-        /* ── Event Details ── */
-        .event-block { margin-top: 2px; }
-        .date-main {
-            font-family: 'Cormorant SC', Georgia, serif;
-            font-size: 20px;
-            font-weight: 300;
-            color: #4a3b27;
+            color: #9c8a7a;
             letter-spacing: 0.12em;
-            line-height: 1.3;
+            margin: 2px 0;
         }
-        .time-text {
+        .request {
             font-size: 13px;
             font-style: italic;
             color: #6b5844;
+            letter-spacing: 0.03em;
+            line-height: 1.55;
+            margin-top: 8px;
+        }
+
+        /* ── Event Details ── */
+        .event-block {
+            margin-bottom: 16px;
+        }
+        .date-main {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 19px;
+            font-weight: 400;
+            color: #4a3b27;
+            letter-spacing: 0.12em;
+            line-height: 1.35;
+        }
+        .time-text {
+            font-size: 13.5px;
+            font-style: italic;
+            color: #6b5844;
             letter-spacing: 0.04em;
+            margin-top: 2px;
         }
         .venue {
-            font-size: 13px;
+            font-size: 13.5px;
             color: #5c4a3a;
             letter-spacing: 0.03em;
             line-height: 1.5;
-            margin-top: 6px;
+            margin-top: 5px;
         }
         .attire {
-            font-size: 10px;
+            font-size: 10.5px;
             color: #9c8a7a;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
             font-style: italic;
             margin-top: 6px;
         }
 
         /* ── RSVP & CTA ── */
-        .rsvp-block { margin-top: 4px; }
+        .rsvp-block {}
         .rsvp-note {
-            font-size: 12px;
+            font-size: 12.5px;
             font-style: italic;
             color: #6b5844;
             letter-spacing: 0.04em;
+            margin-bottom: 12px;
         }
-        .cta-wrap { margin-top: 12px; }
         .cta-btn {
             display: inline-block;
-            padding: 11px 36px;
+            padding: 12px 42px;
             font-family: 'Cormorant SC', Georgia, 'Times New Roman', serif;
             font-size: 13px;
             font-weight: 500;
             color: #FFF8F0;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             text-decoration: none;
-            background: #c9a882;
-            border: 2px solid #c9a882;
+            background: linear-gradient(135deg, #c9a882, #b8946d);
+            border: none;
             border-radius: 2px;
-            transition: background 0.3s, color 0.3s;
+            box-shadow: 0 2px 8px rgba(185,148,109,0.25);
+            transition: all 0.3s ease;
             cursor: pointer;
         }
         .cta-btn:hover,
         .cta-btn:focus {
-            background: #b8946d;
-            border-color: #b8946d;
+            background: linear-gradient(135deg, #b8946d, #a8845d);
+            box-shadow: 0 3px 12px rgba(185,148,109,0.35);
+            transform: translateY(-1px);
         }
 
         /* ── Monogram ── */
@@ -212,16 +249,16 @@
             font-family: 'Cormorant SC', Georgia, serif;
             font-size: 15px;
             font-weight: 300;
-            letter-spacing: 0.35em;
-            color: #E0C5CA;
-            margin-top: 14px;
+            letter-spacing: 0.4em;
+            color: #DFC3C9;
+            margin-top: 16px;
         }
 
         /* ── Animations ── */
         .fade-up {
             opacity: 0;
-            transform: translateY(14px);
-            animation: fadeUp 0.65s ease forwards;
+            transform: translateY(16px);
+            animation: fadeUp 0.7s ease forwards;
         }
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
@@ -237,17 +274,54 @@
         .card-inner > *:nth-child(9)  { animation-delay: 0.9s; }
 
         /* ── Responsive ── */
-        @media (max-width: 520px) {
-            .card-wrapper { padding: 20px 10px; }
-            .card-inner { margin: 14px 14px; padding: 24px 16px 20px; }
+
+        /* Tablets in landscape / small laptops */
+        @media (min-width: 768px) {
+            .card-wrapper { max-width: 540px; }
+            .card-inner { padding: 36px 44px 32px; margin: 22px 30px; }
+            .couple-name { font-size: 29px; }
+            .date-main { font-size: 20px; }
+            .portrait-img { width: 110px; height: 110px; }
+        }
+
+        /* Phones – landscape & larger phones (< 768px) */
+        @media (max-width: 767px) {
+            .card-wrapper { max-width: 480px; padding: 20px 14px; }
+            .card-inner { margin: 16px 20px; padding: 28px 26px 24px; }
             .couple-name { font-size: 25px; }
             .date-main { font-size: 18px; }
-            .cta-btn { padding: 11px 28px; font-size: 12px; }
+            .portrait-img { width: 96px; height: 96px; }
         }
-        @media (max-width: 380px) {
-            .card-inner { margin: 10px 10px; padding: 20px 12px 16px; }
+
+        /* Smaller phones (iPhone SE, etc.) */
+        @media (max-width: 430px) {
+            .card-wrapper { padding: 16px 10px; }
+            .card-inner { margin: 14px 14px; padding: 24px 18px 20px; }
             .couple-name { font-size: 22px; }
+            .date-main { font-size: 17px; }
+            .portrait-img { width: 88px; height: 88px; }
+            .parent-name { font-size: 13px; }
+            .request { font-size: 12.5px; }
+            .cta-btn { padding: 11px 32px; font-size: 12px; }
         }
+
+        /* Very small phones (iPhone SE, Galaxy Fold) */
+        @media (max-width: 375px) {
+            .card-inner {
+                margin: 12px 10px;
+                padding: 20px 14px 16px;
+                box-shadow: 0 0 0 3px #FFF8F9, 0 0 0 4px #F3E4E7;
+            }
+            .couple-name { font-size: 20px; letter-spacing: 0.05em; }
+            .portrait-img { width: 78px; height: 78px; }
+            .divider { padding: 0 10px; margin: 12px auto; }
+            .ampersand { font-size: 17px; }
+            .parent-name { font-size: 12.5px; }
+            .venue { font-size: 12.5px; }
+            .time-text { font-size: 12.5px; }
+            .cta-btn { padding: 10px 28px; }
+        }
+
         @media (prefers-reduced-motion: reduce) {
             .fade-up { animation: none; opacity: 1; transform: none; }
         }
@@ -262,30 +336,23 @@
 
                 <!-- Ornament -->
                 <div class="ornament fade-up" aria-hidden="true">
-                    <svg viewBox="-0.864 -0.333 350 359" width="22" height="23">
+                    <svg viewBox="-0.864 -0.333 350 359" width="24" height="25">
                         <path d="M297.69,147.804c-47.642-5.459-97.763,27.791-107.192,94.289c-0.329,2.318-0.605,4.685-0.824,7.076h-2.81c4.056-45.102,22.727-76.399,33.905-97.214c14.49-26.98,2.729-53.559-2.997-65.452C211.276,73.013,181.848,18.486,174.354,0c-7.494,18.486-36.702,73.013-43.198,86.503c-5.728,11.893-17.488,38.472-2.998,65.452c11.103,20.673,29.87,52.316,34.226,97.214h-3.208c-0.219-2.392-0.495-4.758-0.824-7.076c-9.43-66.499-59.551-99.748-107.192-94.289c-53.284,6.105-81.882,90.319,0.496,110.666c-13.399-24.813,7.443-69.477,55.583-44.167c15.656,8.232,26.561,21.383,31.072,34.866h-8.065c-7.608,0-13.776,4.469-13.776,9.983c0,5.514,6.168,9.983,13.776,9.983h9.817c-0.803,4.348-2.456,8.464-5.034,12.162c-11.416,16.377-49.649,7.444-28.31-28.286c-36.065-4.747-45.649,29.279-35.228,47.641c11.453,23.411,61.479,30.428,80.41-2.978c4.54-8.012,6.819-18.047,7.555-28.539h3.864c-0.033,7.932-0.53,16.224-1.59,24.887c-12.647,8.146-7.717,25.725-23.735,36.234c10.062,0.265,18.271-1.708,20.92-5.415c0,10.75,9.617,19.812,15.886,32.858c5.824-13.119,15.208-24.094,15.208-32.858c2.648,3.707,10.857,5.68,20.92,5.415c-14.687-9.01-8.898-25.516-23.261-37.306c-1.015-8.293-1.508-16.22-1.589-23.815h3.312c0.735,10.492,3.016,20.527,7.555,28.539c18.931,33.405,68.957,26.389,80.41,2.978c10.422-18.361,0.838-52.388-35.228-47.641c21.34,35.73-16.894,44.663-28.31,28.286c-2.577-3.698-4.23-7.814-5.033-12.162h10.572c7.608,0,13.776-4.47,13.776-9.983c0-5.515-6.168-9.983-13.776-9.983h-8.821c4.512-13.483,15.416-26.634,31.072-34.866c48.14-25.31,68.982,19.354,55.583,44.167C379.573,238.124,350.974,153.91,297.69,147.804z" fill="currentColor"/>
                     </svg>
                 </div>
 
-                <!-- Families & Request -->
-                <div class="fade-up">
-                    <div class="families">
-                        <p class="parent-name">Jay Govindan & Sunitha Jayakumar</p>
-                        <p class="together">together with</p>
-                        <p class="parent-name">David Robinson & Dawnn Robinson</p>
+                <!-- Portrait -->
+                <div class="portrait-wrap fade-up">
+                    <div class="portrait-ring">
+                        <img src="../images/invitation-photo.jpg"
+                             alt="Nithya & Luke"
+                             class="portrait-img"
+                             loading="eager">
                     </div>
-                    <p class="request">request the honour of your presence<br>at the marriage of their children</p>
-                </div>
-
-                <!-- Divider -->
-                <div class="divider fade-up" aria-hidden="true">
-                    <span class="divider-line"></span>
-                    <span class="divider-diamond"></span>
-                    <span class="divider-line"></span>
                 </div>
 
                 <!-- Couple Names -->
-                <div class="fade-up">
+                <div class="names-block fade-up">
                     <h1 class="couple-name">Nithya Jayakumar</h1>
                     <p class="ampersand">&amp;</p>
                     <h1 class="couple-name">Luke Robinson</h1>
@@ -298,27 +365,33 @@
                     <span class="divider-line"></span>
                 </div>
 
+                <!-- Families & Request -->
+                <div class="families-block fade-up">
+                    <p class="parent-name">Jay Govindan &amp; Sunitha Jayakumar</p>
+                    <p class="together">together with</p>
+                    <p class="parent-name">David Robinson &amp; Dawnn Robinson</p>
+                    <p class="request">request the honour of your presence<br>at the marriage of their children</p>
+                </div>
+
                 <!-- Event Details -->
                 <div class="event-block fade-up">
                     <p class="date-main">Saturday, June 6, 2026</p>
-                    <p class="time-text">at one o'clock in the afternoon</p>
-                    <p class="venue">1700 Buford Highway<br>Duluth, Georgia 30097</p>
+                    <p class="time-text">1:00 PM</p>
+                    <p class="venue">1700 Buford Highway · Duluth, Georgia</p>
                     <p class="attire">Formal Attire Requested</p>
                 </div>
 
                 <!-- Divider -->
-                <div class="divider fade-up" aria-hidden="true" style="margin: 6px auto;">
-                    <span class="divider-line" style="max-width: 36px;"></span>
+                <div class="divider fade-up" aria-hidden="true">
+                    <span class="divider-line"></span>
                     <span class="divider-diamond"></span>
-                    <span class="divider-line" style="max-width: 36px;"></span>
+                    <span class="divider-line"></span>
                 </div>
 
                 <!-- RSVP & CTA -->
                 <div class="rsvp-block fade-up">
                     <p class="rsvp-note">Kindly respond by May 1, 2026</p>
-                    <div class="cta-wrap">
-                        <a href="https://www.lukeandnithya.com" class="cta-btn">RSVP &amp; Details</a>
-                    </div>
+                    <a href="https://www.lukeandnithya.com" class="cta-btn">RSVP &amp; Details</a>
                 </div>
 
                 <!-- Monogram -->

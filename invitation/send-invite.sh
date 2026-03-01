@@ -5,66 +5,65 @@
 # for Nithya & Luke's wedding virtual invitation.
 # ─────────────────────────────────────────────────
 
-INVITE_URL="https://www.lukeandnithya.com/invite/"
-
-read -r -d '' MESSAGE << 'EOF'
-You are warmly invited to
-celebrate the marriage of
-
-     Nithya  &  Luke
-
- Saturday, June 6th, 2026
-
-Open your invitation below
-
-EOF
-
-MESSAGE="${MESSAGE}${INVITE_URL}"
-
-# URL-encode via python3, reading from a temp file to avoid encoding issues
-ENCODED_MSG=$(python3 -c "
+exec python3 -u - <<'PYINVITE'
 import urllib.parse, sys
-msg = open(sys.argv[1], 'r', encoding='utf-8').read()
-print(urllib.parse.quote(msg, safe=''))
-" <(printf '%s' "$MESSAGE"))
 
-echo ""
-echo "==========================================="
-echo "  Nithya & Luke -- Wedding Invite Sender"
-echo "==========================================="
-echo ""
-echo "--- Text Message (copy & paste) -----------"
-echo ""
-echo "$MESSAGE"
-echo ""
-echo "--------------------------------------------"
-echo ""
+INVITE_URL = "https://www.lukeandnithya.com/invite/"
 
-while true; do
-    read -rp "Enter phone number (with country code, e.g. 14045551234) or 'q' to quit: " PHONE
+MESSAGE = """\
+\u2022 \u2022 \u2022
 
-    if [[ "$PHONE" == "q" || "$PHONE" == "Q" ]]; then
-        echo ""
-        echo "Done!"
+You\u2019re joyfully invited
+to celebrate the wedding of
+
+\u2728 Nithya & Luke \u2728
+
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+\U0001F4C5 Saturday, June 6, 2026
+\U0001F553 1:00 in the afternoon
+\U0001F4CD Duluth, Georgia
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+
+Open your invitation \U0001F48C
+""" + INVITE_URL + """
+
+We would be so honored
+to have you there \U0001F90D
+
+\u2022 \u2022 \u2022"""
+
+ENCODED = urllib.parse.quote(MESSAGE, safe='')
+
+print()
+print("=" * 44)
+print("   Nithya & Luke \u2014 Wedding Invite Sender")
+print("=" * 44)
+print()
+print("\u2500\u2500\u2500 Copy & paste this message \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
+print()
+print(MESSAGE)
+print()
+print("\u2500" * 44)
+print()
+
+while True:
+    try:
+        phone = input("Enter phone number (with country code, e.g. 14045551234) or 'q' to quit: ").strip()
+    except (EOFError, KeyboardInterrupt):
+        print("\nDone!")
         break
-    fi
 
-    # Strip any spaces, dashes, parens, plus signs
-    PHONE_CLEAN=$(echo "$PHONE" | tr -d ' ()-+')
+    if phone.lower() == 'q':
+        print("\nDone!")
+        break
 
-    if [[ -z "$PHONE_CLEAN" || ! "$PHONE_CLEAN" =~ ^[0-9]+$ ]]; then
-        echo "  [!] Invalid number. Use digits only (e.g. 14045551234)."
-        echo ""
+    clean = phone.translate(str.maketrans('', '', ' ()-+'))
+
+    if not clean.isdigit():
+        print("  [!] Invalid number. Use digits only (e.g. 14045551234).\n")
         continue
-    fi
 
-    WHATSAPP_LINK="https://wa.me/${PHONE_CLEAN}?text=${ENCODED_MSG}"
-
-    echo ""
-    echo "  -> WhatsApp link for ${PHONE_CLEAN}:"
-    echo ""
-    echo "  $WHATSAPP_LINK"
-    echo ""
-    echo "  (Open this link in a browser or click it to send via WhatsApp)"
-    echo ""
-done
+    link = f"https://wa.me/{clean}?text={ENCODED}"
+    print(f"\n  \u2192 WhatsApp link for {clean}:\n")
+    print(f"  {link}\n")
+PYINVITE
