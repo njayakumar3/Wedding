@@ -5,38 +5,40 @@
 # for Nithya & Luke's wedding virtual invitation.
 # ─────────────────────────────────────────────────
 
-exec python3 -u - <<'PYINVITE'
+exec python3 -u <(cat <<'PYINVITE'
 import urllib.parse, sys
 
 INVITE_URL = "https://www.lukeandnithya.com/invite/"
 
 MESSAGE = """\
-\u2022 \u2022 \u2022
+✨ You're invited!
 
-You\u2019re joyfully invited
-to celebrate the wedding of
+Nithya Jayakumar & Luke Robinson
 
-\u2728 Nithya & Luke \u2728
+📅  Saturday, June 6, 2026
+🕐  1:00 PM
+📍  Duluth, Georgia
 
-\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
-\U0001F4C5 Saturday, June 6, 2026
-\U0001F553 1:00 in the afternoon
-\U0001F4CD Duluth, Georgia
-\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
-
-Open your invitation \U0001F48C
+Open your invitation 💌
 """ + INVITE_URL + """
 
-We would be so honored
-to have you there \U0001F90D
+We would be honoured
+to celebrate with you 🤍"""
 
-\u2022 \u2022 \u2022"""
+# Shorter message for WhatsApp link (long URLs get truncated)
+WA_MESSAGE = """✨ You're invited to the wedding of Nithya & Luke!
 
-ENCODED = urllib.parse.quote(MESSAGE, safe='')
+📅 Saturday, June 6, 2026 · 1:00 PM
+📍 Duluth, Georgia
+
+Open your invitation 💌
+""" + INVITE_URL
+
+ENCODED = urllib.parse.quote(WA_MESSAGE, safe='')
 
 print()
 print("=" * 44)
-print("   Nithya & Luke \u2014 Wedding Invite Sender")
+print("   Nithya & Luke — Wedding Invite Sender")
 print("=" * 44)
 print()
 print("\u2500\u2500\u2500 Copy & paste this message \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500")
@@ -63,7 +65,8 @@ while True:
         print("  [!] Invalid number. Use digits only (e.g. 14045551234).\n")
         continue
 
-    link = f"https://wa.me/{clean}?text={ENCODED}"
+    link = f"https://api.whatsapp.com/send?phone={clean}&text={ENCODED}"
     print(f"\n  \u2192 WhatsApp link for {clean}:\n")
     print(f"  {link}\n")
 PYINVITE
+)
