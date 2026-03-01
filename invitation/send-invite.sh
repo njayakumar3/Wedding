@@ -11,19 +11,19 @@ import urllib.parse, sys
 INVITE_URL = "https://www.lukeandnithya.com/invite/"
 
 MESSAGE = """\
-✨ You're invited!
+✨ You're invited to the wedding of
 
-Nithya Jayakumar & Luke Robinson
+Nithya Jayakumar & Luke Robinson!
 
 📅  Saturday, June 6, 2026
 🕐  1:00 PM
 📍  Duluth, Georgia
 
-Open your invitation 💌
+Open your invitation: 💌
 """ + INVITE_URL + """
 
 We would be honoured
-to celebrate with you 🤍"""
+to celebrate with you. 🤍"""
 
 # Shorter message for WhatsApp link (long URLs get truncated)
 WA_MESSAGE = """✨ You're invited to the wedding of Nithya & Luke!
