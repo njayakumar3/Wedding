@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Ceremony — Nithya & Luke</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pooja Ceremony — Nithya & Luke">
+    <meta property="og:description" content="Friday, June 5, 2026 — You are cordially invited to a sacred Pooja ceremony blessing the union of Nithya & Luke.">
+    <meta property="og:image" content="https://www.lukeandnithya.com/images/og-invite.jpg">
+    <meta property="og:url" content="https://www.lukeandnithya.com/pooja-invite/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            background: #7B1113;
+            background-image:
+                radial-gradient(circle at 25% 20%, rgba(212, 165, 62, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 75% 80%, rgba(212, 165, 62, 0.06) 0%, transparent 50%);
+            color: #3B1A0A;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        ::selection { background: #D4A53E; color: #fff; }
+
+        /* ── Card Wrapper ── */
+        .card-wrapper {
+            width: 100%;
+            max-width: 580px;
+            padding: 24px 16px;
+        }
+
+        .card {
+            background: linear-gradient(180deg, #FFF9ED 0%, #FDF5E6 30%, #FFF8EE 60%, #FFFAF0 100%);
+            border: 2px solid #D4A53E;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 1px rgba(123, 17, 19, 0.15),
+                0 12px 50px rgba(0,0,0,0.2),
+                0 2px 6px rgba(0,0,0,0.08),
+                inset 0 0 80px rgba(212, 165, 62, 0.04);
+        }
+
+        /* Gold top/bottom bars */
+        .card::before,
+        .card::after {
+            content: '';
+            display: block;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #D4A53E 10%, #E8C564 30%, #D4A53E 50%, #E8C564 70%, #D4A53E 90%, transparent);
+        }
+
+        .card-inner {
+            margin: 16px 22px;
+            border: 1.5px solid #D4A53E;
+            box-shadow: 0 0 0 4px #FFF9ED, 0 0 0 5.5px rgba(212, 165, 62, 0.35);
+            padding: 36px 32px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Corner motifs */
+        .card-inner::before,
+        .card-inner::after {
+            content: '❋';
+            position: absolute;
+            color: #D4A53E;
+            font-size: 16px;
+            opacity: 0.5;
+        }
+        .card-inner::before { top: 8px; left: 12px; }
+        .card-inner::after { bottom: 8px; right: 12px; }
+
+        /* ── Deity Image ── */
+        .wedding-icon {
+            margin-bottom: 12px;
+            line-height: 1;
+            text-align: center;
+        }
+        .wedding-icon img {
+            display: inline-block;
+            height: 140px;
+            width: auto;
+            border-radius: 6px;
+            border: 1.5px solid rgba(212, 165, 62, 0.4);
+            box-shadow: 0 2px 8px rgba(123, 17, 19, 0.12);
+        }
+        .deity-caption {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            color: #996515;
+            text-transform: uppercase;
+            margin-top: 6px;
+        }
+
+        /* ── Decorative Mandala Border (top) ── */
+        .mandala-border {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .mandala-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4A53E, transparent);
+        }
+        .mandala-dot {
+            width: 6px;
+            height: 6px;
+            border: 1px solid #D4A53E;
+            transform: rotate(45deg);
+        }
+
+        /* ── Pooja Title ── */
+        .pooja-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #7B1113;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .pooja-subtitle {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.95rem;
+            color: #996515;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4A53E 20%, #D4A53E 80%, transparent);
+        }
+        .divider-icon {
+            color: #D4A53E;
+            font-size: 0.85rem;
+            line-height: 1;
+        }
+
+        /* ── Invitation text ── */
+        .invite-families {
+            margin-bottom: 14px;
+        }
+        .invite-parent {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #4A2A10;
+            line-height: 1.5;
+        }
+        .invite-join {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #8B6F47;
+            margin: 4px 0;
+        }
+        .invite-request {
+            font-size: 1rem;
+            font-style: italic;
+            color: #5C3A1E;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Couple Names ── */
+        .couple-names {
+            margin-bottom: 16px;
+        }
+        .couple-name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.65rem;
+            font-weight: 500;
+            color: #7B1113;
+            line-height: 1.3;
+        }
+        .couple-ampersand {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #C9930D;
+            margin: 2px 0;
+        }
+
+        /* ── Event Details ── */
+        .event-details {
+            margin-top: 12px;
+        }
+        .event-label {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.8rem;
+            letter-spacing: 2.5px;
+            color: #996515;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .event-date {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #3B1A0A;
+            margin-bottom: 2px;
+        }
+        .event-time {
+            font-size: 1rem;
+            color: #5C3A1E;
+            margin-bottom: 12px;
+        }
+        .event-venue {
+            font-size: 0.95rem;
+            color: #4A2A10;
+            line-height: 1.5;
+        }
+        .event-city {
+            font-size: 0.9rem;
+            color: #6B4F36;
+        }
+
+        /* ── Dress Code ── */
+        .dress-code {
+            margin-top: 14px;
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #996515;
+            text-transform: uppercase;
+        }
+
+        /* ── Bottom Blessing ── */
+        .blessing {
+            margin-top: 18px;
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.78rem;
+            color: #B8860B;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.85;
+        }
+
+        /* ── Paisley / Mango decorations ── */
+        .corner-paisley {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+        .corner-paisley.top-right {
+            top: 0;
+            right: 0;
+        }
+        .corner-paisley.bottom-left {
+            bottom: 0;
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        /* ── Divine Couple Art (Srinivasa Kalyanam) ── */
+        .divine-couple {
+            margin: 22px auto 10px;
+            text-align: center;
+            line-height: 1;
+        }
+        .divine-couple img {
+            display: inline-block;
+            width: 92%;
+            max-width: 420px;
+            height: auto;
+            opacity: 0.88;
+            filter: drop-shadow(0 1px 3px rgba(123, 17, 19, 0.08));
+        }
+        .divine-couple-caption {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.65rem;
+            letter-spacing: 1.8px;
+            color: #B8860B;
+            text-transform: uppercase;
+            margin-top: 8px;
+            opacity: 0.7;
+        }
+
+        /* ── Lotus decoration ── */
+        .lotus-row {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin: 10px 0;
+            color: #D4A53E;
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        /* ── RSVP link ── */
+        .rsvp-note {
+            margin-top: 16px;
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #5C3A1E;
+            line-height: 1.6;
+        }
+        .rsvp-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #7B1113;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(123, 17, 19, 0.3);
+            padding-bottom: 1px;
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .rsvp-link:hover {
+            color: #C9930D;
+            border-color: #C9930D;
+        }
+
+        /* ── Mobile tweaks ── */
+        @media (max-width: 480px) {
+            .card-wrapper { padding: 14px 10px; }
+            .card-inner { margin: 12px 14px; padding: 28px 20px 24px; }
+            .pooja-title { font-size: 1.4rem; }
+            .couple-name { font-size: 1.35rem; }
+            .invite-request { font-size: 0.92rem; }
+        }
+
+        /* ── Subtle paper texture ── */
+        .card::after {
+            position: relative;
+        }
+        .paper-texture {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 0,0 0 0 0 0,0 0 0 0 0,0 0 0 0.025 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Fade-in animation ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            animation: fadeUp 1s ease-out both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="paper-texture"></div>
+            <div class="card-inner">
+
+                <!-- Lord Ganesha -->
+                <div class="wedding-icon" aria-label="Lord Ganesha">
+                    <img src="../images/ganesha-classic.png" alt="Lord Ganesha — Remover of Obstacles" />
+                    <p class="deity-caption">Sri Ganeshaya Namaha</p>
+                </div>
+
+                <!-- Top mandala border -->
+                <div class="mandala-border">
+                    <span class="mandala-line"></span>
+                    <span class="mandala-dot"></span>
+                    <span class="mandala-line"></span>
+                    <span class="mandala-dot"></span>
+                    <span class="mandala-line"></span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="pooja-title">Pooja Ceremony</h1>
+                <p class="pooja-subtitle">Sacred Blessings</p>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">✦</span>
+                    <span class="divider-line"></span>
+                </div>
+
+                <!-- Families -->
+                <div class="invite-families">
+                    <p class="invite-parent">Jay Govindan &amp; Sunitha Jayakumar</p>
+                    <p class="invite-join">together with</p>
+                    <p class="invite-parent">David Robinson &amp; Dawnn Robinson</p>
+                </div>
+
+                <p class="invite-request">
+                    cordially invite you to seek divine blessings<br>
+                    at the Pooja ceremony preceding the wedding of
+                </p>
+
+                <!-- Couple names -->
+                <div class="couple-names">
+                    <h2 class="couple-name">Nithya Jayakumar</h2>
+                    <p class="couple-ampersand">&amp;</p>
+                    <h2 class="couple-name">Luke Robinson</h2>
+                </div>
+
+                <!-- Srinivasa Kalyanam — Divine Couple Art -->
+                <div class="divine-couple" aria-label="Lord Srinivasa and Goddess Padmavati">
+                    <img src="../images/srinivasa-padmavati-twin.svg"
+                         alt="Srinivasa Kalyanam — Lord Balaji and Goddess Padmavati in traditional temple arches"
+                         loading="eager" />
+                    <p class="divine-couple-caption">Sri Srinivasa Kalyanam</p>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">✦</span>
+                    <span class="divider-line"></span>
+                </div>
+
+                <!-- Event Details -->
+                <div class="event-details">
+                    <p class="event-label">Date &amp; Time</p>
+                    <p class="event-date">Friday, June the Fifth, 2026</p>
+                    <p class="event-time">Time To Be Announced</p>
+                </div>
+
+                <div class="divider" style="margin: 10px 0;">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon" style="font-size:0.6rem;">◆</span>
+                    <span class="divider-line"></span>
+                </div>
+
+                <div class="event-details">
+                    <p class="event-label">Venue</p>
+                    <p class="event-venue">1700 Buford Highway</p>
+                    <p class="event-city">Duluth, Georgia 30097</p>
+                </div>
+
+                <!-- Dress code -->
+                <p class="dress-code">Traditional / Indian Attire Welcome</p>
+
+                <!-- Lotus row decoration -->
+                <div class="lotus-row" aria-hidden="true">
+                    <span>✿</span><span>✿</span><span>✿</span>
+                </div>
+
+                <!-- RSVP note -->
+                <p class="rsvp-note">
+                    Kindly let us know if you will be joining us
+                </p>
+                <a href="https://www.lukeandnithya.com/pooja/" class="rsvp-link">View Details &amp; RSVP</a>
+
+                <!-- Bottom mandala border -->
+                <div class="mandala-border" style="margin-top: 18px; margin-bottom: 0;">
+                    <span class="mandala-line"></span>
+                    <span class="mandala-dot"></span>
+                    <span class="mandala-line"></span>
+                    <span class="mandala-dot"></span>
+                    <span class="mandala-line"></span>
+                </div>
+
+                <!-- Blessing -->
+                <p class="blessing">May There Be Auspiciousness</p>
+
+            </div><!-- /card-inner -->
+        </div><!-- /card -->
+    </div><!-- /card-wrapper -->
+</body>
+</html>

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%">
+  <!-- Definitions -->
+  <defs>
+    <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4A53E" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#D4A53E" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="umbrella-fabric" patternUnits="userSpaceOnUse" width="10" height="10">
+      <circle cx="5" cy="5" r="1.5" fill="#D4A53E"/>
+      <path d="M0 5 L10 5 M5 0 L5 10" stroke="#D4A53E" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background Glow -->
+  <circle cx="600" cy="200" r="400" fill="url(#sun-glow)"/>
+
+  <!-- Ground Line -->
+  <path d="M 50,350 L 1150,350" stroke="#D4A53E" stroke-width="4" stroke-dasharray="12 4"/>
+  <path d="M 50,360 L 1150,360" stroke="#7B1113" stroke-width="2"/>
+  <path d="M 50,370 L 1150,370" stroke="#D4A53E" stroke-width="1"/>
+
+  <!-- ==================== MUSICIAN 1 (Left - Drummer) ==================== -->
+  <g transform="translate(150, 160)">
+    <!-- Body Silhouette -->
+    <path d="M 50,60 Q 60,100 40,150 L 80,150 Q 80,100 70,60 Z" fill="#7B1113" stroke="#D4A53E" stroke-width="1"/>
+    <!-- Head & Turban -->
+    <circle cx="60" cy="40" r="15" fill="#7B1113"/>
+    <path d="M 40,35 Q 60,10 80,35 Q 75,45 60,45 Q 45,45 40,35 Z" fill="#D4A53E"/>
+    <path d="M 80,30 Q 90,20 85,15" stroke="#D4A53E" stroke-width="2" fill="none"/>
+    <!-- Drum (Dhol) -->
+    <ellipse cx="75" cy="110" rx="25" ry="15" fill="#7B1113" stroke="#D4A53E" stroke-width="3" transform="rotate(-15 75 110)"/>
+    <path d="M 55,100 Q 75,105 95,115" stroke="#D4A53E" stroke-width="1" fill="none"/>
+    <path d="M 60,115 Q 75,115 90,125" stroke="#D4A53E" stroke-width="1" fill="none"/>
+    <!-- Legs & Arms -->
+    <path d="M 50,150 Q 40,180 30,190" stroke="#7B1113" stroke-width="6" fill="none"/>
+    <path d="M 70,150 Q 70,180 80,190" stroke="#7B1113" stroke-width="6" fill="none"/>
+    <path d="M 20,190 L 35,190 M 80,190 L 95,190" stroke="#D4A53E" stroke-width="4" fill="none"/>
+    <path d="M 60,70 Q 30,90 55,110" stroke="#7B1113" stroke-width="5" fill="none"/>
+    <path d="M 60,70 Q 90,90 75,110" stroke="#7B1113" stroke-width="5" fill="none"/>
+  </g>
+
+  <!-- ==================== MUSICIAN 2 (Horn Blower) ==================== -->
+  <g transform="translate(350, 140)">
+    <!-- Body Silhouette -->
+    <path d="M 50,80 Q 75,120 40,170 L 85,170 Q 80,120 70,80 Z" fill="#7B1113" stroke="#D4A53E" stroke-width="1"/>
+    <!-- Head & Turban -->
+    <circle cx="60" cy="60" r="15" fill="#7B1113"/>
+    <path d="M 40,55 Q 60,30 80,55 Q 75,65 60,65 Q 45,65 40,55 Z" fill="#D4A53E"/>
+    <!-- Huge Curved Horn -->
+    <path d="M 72,62 Q 130,50 140,10" stroke="#D4A53E" stroke-width="4" fill="none"/>
+    <polygon points="135,10 145,10 150,-10 130,-10" fill="#7B1113" stroke="#D4A53E" stroke-width="2"/>
+    <!-- Legs & Arms -->
+    <path d="M 50,170 Q 45,200 35,210" stroke="#7B1113" stroke-width="6" fill="none"/>
+    <path d="M 75,170 Q 85,200 95,210" stroke="#7B1113" stroke-width="6" fill="none"/>
+    <path d="M 25,210 L 40,210 M 95,210 L 110,210" stroke="#D4A53E" stroke-width="4" fill="none"/>
+    <path d="M 60,90 Q 90,80 100,60 L 72,62" stroke="#7B1113" stroke-width="5" fill="none"/>
+  </g>
+
+  <!-- ==================== GROOM ON HORSE (Center) ==================== -->
+  <g transform="translate(580, 70)">
+    <!-- Horse Body -->
+    <path d="M -40,160 Q -20,130 10,140 Q 50,140 80,160 Q 100,190 80,230 Q 50,250 10,230 Q -30,220 -40,160 Z" fill="#7B1113" stroke="#D4A53E" stroke-width="2"/>
+    <!-- Horse Neck & Head -->
+    <path d="M 10,140 Q 30,70 60,60 Q 90,50 90,80 Q 80,110 50,140 Z" fill="#7B1113"/>
+    <!-- Horse Ornamental Mane & Bridle -->
+    <path d="M 30,70 Q 40,50 60,40 M 40,80 Q 50,55 70,45 M 50,90 Q 60,65 80,55" stroke="#D4A53E" stroke-width="3" fill="none"/>
+    <circle cx="70" cy="70" r="3" fill="#D4A53E"/>
+    <path d="M 70,70 L 30,110 M 70,70 Q 85,90 50,130" stroke="#D4A53E" stroke-width="1.5" fill="none"/>
+    <!-- Horse Saddle & Decors -->
+    <path d="M 0,145 Q 40,145 50,180 L -10,180 Z" fill="#D4A53E"/>
+    <path d="M -20,160 Q 30,190 70,160" stroke="#D4A53E" stroke-width="3" fill="none" stroke-dasharray="5 3"/>
+    <path d="M -30,180 Q 30,220 70,180" stroke="#D4A53E" stroke-width="2" fill="none"/>
+    <!-- Horse Legs -->
+    <path d="M -10,210 Q -15,240 -30,280" stroke="#7B1113" stroke-width="8" fill="none"/>
+    <path d="M 10,220 Q 5,260 15,280" stroke="#7B1113" stroke-width="8" fill="none"/>
+    <path d="M 50,220 Q 60,250 80,280" stroke="#7B1113" stroke-width="8" fill="none"/>
+    <path d="M 65,210 Q 75,240 95,280" stroke="#7B1113" stroke-width="8" fill="none"/>
+    <!-- Hooves -->
+    <path d="M -40,280 L -25,280 M 5,280 L 20,280 M 70,280 L 85,280 M 85,280 L 100,280" stroke="#D4A53E" stroke-width="5" fill="none"/>
+    
+    <!-- Groom Body -->
+    <path d="M 5,140 Q 15,90 35,90 Q 45,90 40,140 Z" fill="#7B1113"/>
+    <!-- Groom Sash/Shawl -->
+    <path d="M 10,110 Q 30,120 40,105 L 35,130 Q 20,130 15,110 Z" fill="#D4A53E"/>
+    <!-- Groom Head & Turban -->
+    <circle cx="28" cy="75" r="14" fill="#7B1113"/>
+    <path d="M 12,65 Q 35,40 45,60 Q 40,75 25,75 Q 15,75 12,65 Z" fill="#D4A53E"/>
+    <!-- Turban Feather/Kalgi -->
+    <path d="M 33,55 Q 40,30 25,25" stroke="#D4A53E" stroke-width="2" fill="none"/>
+    <!-- Groom Hand & Reins -->
+    <path d="M 35,110 Q 50,115 50,130 L 70,70" stroke="#7B1113" stroke-width="4" fill="none"/>
+  </g>
+
+  <!-- ==================== UMBRELLA BEARER (Right) ==================== -->
+  <g transform="translate(850, 140)">
+    <!-- Body Silhouette -->
+    <path d="M 50,80 Q 70,120 40,170 L 90,170 Q 80,120 70,80 Z" fill="#7B1113" stroke="#D4A53E" stroke-width="1"/>
+    <!-- Royal Umbrella (Chatri) -->
+    <path d="M 30,120 Q 5,10 -30,0" stroke="#7B1113" stroke-width="4" fill="none"/> <!-- Pole -->
+    <path d="M -90,-20 Q -30,-80 30,-20 Q 25,5 -85,5 Z" fill="url(#umbrella-fabric)" stroke="#D4A53E" stroke-width="2"/>
+    <path d="M -90,-20 Q -30,-50 30,-20" stroke="#D4A53E" stroke-width="2" fill="none"/>
+    <path d="M -60,5 V 15 M -30,5 V 15 M 0,5 V 15 M -80,5 V 10 M 20,5 V 10" stroke="#D4A53E" stroke-width="3"/> <!-- Tassels -->
+    <circle cx="-30" cy="-60" r="5" fill="#D4A53E"/>
+    
+    <!-- Embellished Shawl -->
+    <path d="M 50,90 Q 70,110 80,140 Q 60,140 60,95 Z" fill="#D4A53E"/>
+    
+    <!-- Head & Turban -->
+    <circle cx="60" cy="55" r="14" fill="#7B1113"/>
+    <path d="M 45,45 Q 65,25 75,50 Q 70,60 55,60 Q 45,60 45,45 Z" fill="#D4A53E"/>
+    
+    <!-- Arms -->
+    <path d="M 60,90 Q 40,105 30,120" stroke="#7B1113" stroke-width="5" fill="none"/>
+    
+    <!-- Legs -->
+    <path d="M 50,170 Q 40,200 30,210" stroke="#7B1113" stroke-width="6" fill="none"/>
+    <path d="M 75,170 Q 85,200 95,210" stroke="#7B1113" stroke-width="6" fill="none"/>
+    <path d="M 20,210 L 35,210 M 95,210 L 110,210" stroke="#D4A53E" stroke-width="4" fill="none"/>
+  </g>
+
+  <!-- Ornaments & Sparkles (Intricate details in background) -->
+  <g fill="#D4A53E" opacity="0.6">
+    <!-- Star 1 -->
+    <polygon points="100,50 105,65 120,70 105,75 100,90 95,75 80,70 95,65" />
+    <!-- Star 2 -->
+    <polygon points="300,30 303,40 315,42 303,45 300,55 297,45 285,42 297,40" />
+    <!-- Star 3 -->
+    <polygon points="500,80 504,95 520,100 504,105 500,120 496,105 480,100 496,95" />
+    <!-- Star 4 -->
+    <polygon points="1050,40 1053,50 1065,52 1053,55 1050,65 1047,55 1035,52 1047,50" />
+    <circle cx="200" cy="100" r="2" />
+    <circle cx="450" cy="50" r="3" />
+    <circle cx="800" cy="80" r="2" />
+    <circle cx="950" cy="180" r="3" />
+  </g>
+</svg>

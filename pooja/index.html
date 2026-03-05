@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Ceremony — Nithya & Luke · June 5, 2026</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pooja Ceremony — Nithya & Luke">
+    <meta property="og:description" content="Friday, June 5, 2026 — Join us for a sacred Pooja ceremony blessing the union of Nithya & Luke. RSVP & details inside.">
+    <meta property="og:image" content="https://www.lukeandnithya.com/images/og-invite.jpg">
+    <meta property="og:url" content="https://www.lukeandnithya.com/pooja/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            background: #FFFAF0;
+            color: #3B1A0A;
+            min-height: 100vh;
+            min-height: 100dvh;
+            -webkit-text-size-adjust: 100%;
+            line-height: 1.7;
+        }
+
+        ::selection { background: #D4A53E; color: #fff; }
+
+        /* ── Textured background ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 0,0 0 0 0 0,0 0 0 0 0,0 0 0 0.02 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body > * { position: relative; z-index: 1; }
+
+        /* ── Top decorative border ── */
+        .top-border {
+            height: 6px;
+            background: linear-gradient(90deg, #7B1113, #D4A53E 20%, #E8C564 50%, #D4A53E 80%, #7B1113);
+        }
+
+        /* ── Hero Section ── */
+        .hero {
+            background:
+                linear-gradient(180deg, rgba(123,17,19,0.92) 0%, rgba(123,17,19,0.88) 60%, rgba(100,12,14,0.95) 100%);
+            color: #FFF9ED;
+            text-align: center;
+            padding: 52px 24px 44px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(212,165,62,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212,165,62,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-sacred {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 0.95rem;
+            color: #E8C564;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+
+        .hero-om {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 2.6rem;
+            color: #E8C564;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .hero-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .hero-ornament-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #E8C564, transparent);
+        }
+        .hero-ornament-dot {
+            width: 5px;
+            height: 5px;
+            border: 1px solid #E8C564;
+            transform: rotate(45deg);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #FFF9ED;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #E8C564;
+            margin-bottom: 20px;
+        }
+
+        .hero-couple {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #FFF4DC;
+            line-height: 1.4;
+        }
+        .hero-couple-amp {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            color: #E8C564;
+            font-size: 1.3rem;
+        }
+
+        .hero-date {
+            margin-top: 18px;
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 1.15rem;
+            letter-spacing: 2.5px;
+            color: #E8C564;
+        }
+
+        /* ── Gold divider bar between sections ── */
+        .gold-bar {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #D4A53E 15%, #E8C564 50%, #D4A53E 85%, transparent);
+        }
+
+        /* ── Section Styles ── */
+        .section {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 44px 28px;
+            text-align: center;
+        }
+
+        .section-icon {
+            font-size: 1.6rem;
+            color: #C9930D;
+            margin-bottom: 6px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #7B1113;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .section-subtitle {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: #996515;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 22px;
+            max-width: 300px;
+        }
+        .section-divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4A53E, transparent);
+        }
+        .section-divider-icon {
+            color: #D4A53E;
+            font-size: 0.7rem;
+        }
+
+        .section-text {
+            font-size: 1.05rem;
+            color: #4A2A10;
+            line-height: 1.8;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* ── Event Details Cards ── */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 500px;
+            margin: 24px auto 0;
+        }
+
+        .detail-card {
+            background: linear-gradient(135deg, #FFF9ED 0%, #FFF5E0 100%);
+            border: 1px solid rgba(212, 165, 62, 0.3);
+            padding: 22px 16px;
+            text-align: center;
+        }
+
+        .detail-card-label {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            color: #996515;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .detail-card-value {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3B1A0A;
+            line-height: 1.4;
+        }
+
+        .detail-card-sub {
+            font-size: 0.9rem;
+            color: #6B4F36;
+            margin-top: 2px;
+        }
+
+        .detail-full {
+            grid-column: 1 / -1;
+        }
+
+        /* ── About Section ── */
+        .about-section {
+            background: linear-gradient(180deg, #FEF7E8 0%, #FFFAF0 100%);
+            border-top: 1px solid rgba(212, 165, 62, 0.15);
+            border-bottom: 1px solid rgba(212, 165, 62, 0.15);
+        }
+
+        .info-list {
+            list-style: none;
+            max-width: 480px;
+            margin: 20px auto 0;
+            text-align: left;
+        }
+
+        .info-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 165, 62, 0.12);
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .info-list li:last-child { border-bottom: none; }
+
+        .info-icon {
+            flex-shrink: 0;
+            width: 28px;
+            text-align: center;
+            font-size: 1rem;
+            color: #C9930D;
+            margin-top: 2px;
+        }
+
+        .info-text {
+            font-size: 0.98rem;
+            color: #4A2A10;
+            line-height: 1.6;
+        }
+        .info-text strong {
+            color: #3B1A0A;
+            font-weight: 600;
+        }
+
+        /* ── RSVP Section ── */
+        .rsvp-section {
+            background:
+                linear-gradient(180deg, rgba(123,17,19,0.92) 0%, rgba(100,12,14,0.95) 100%);
+            color: #FFF9ED;
+            padding: 52px 28px;
+            text-align: center;
+        }
+
+        .rsvp-section .section-title {
+            color: #FFF9ED;
+        }
+        .rsvp-section .section-subtitle {
+            color: #E8C564;
+        }
+        .rsvp-section .section-divider-line {
+            background: linear-gradient(90deg, transparent, #E8C564, transparent);
+        }
+        .rsvp-section .section-divider-icon {
+            color: #E8C564;
+        }
+        .rsvp-section .section-text {
+            color: #FFF4DC;
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 14px 44px;
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7B1113;
+            background: linear-gradient(135deg, #E8C564 0%, #D4A53E 100%);
+            border: none;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(212, 165, 62, 0.3);
+        }
+        .rsvp-button:hover {
+            background: linear-gradient(135deg, #F0D47A 0%, #E8C564 100%);
+            box-shadow: 0 6px 24px rgba(212, 165, 62, 0.4);
+            transform: translateY(-1px);
+        }
+        .rsvp-button:active {
+            transform: translateY(0);
+        }
+
+        .rsvp-note {
+            margin-top: 16px;
+            font-size: 0.88rem;
+            font-style: italic;
+            color: rgba(255,249,237,0.7);
+        }
+
+        /* ── Footer ── */
+        .footer {
+            background: #3B1A0A;
+            color: rgba(255,249,237,0.6);
+            text-align: center;
+            padding: 28px 20px;
+        }
+
+        .footer-names {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            color: #E8C564;
+            margin-bottom: 4px;
+        }
+
+        .footer-date {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: rgba(232,197,100,0.6);
+        }
+
+        .footer-blessing {
+            margin-top: 14px;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 0.82rem;
+            color: rgba(232,197,100,0.5);
+        }
+
+        /* ── Fade-in animations ── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero { animation: fadeUp 0.8s ease-out both; }
+
+        /* ── Responsive ── */
+        @media (max-width: 520px) {
+            .hero { padding: 40px 18px 36px; }
+            .hero-title { font-size: 1.8rem; letter-spacing: 2px; }
+            .hero-couple { font-size: 1.25rem; }
+            .section { padding: 36px 20px; }
+            .section-title { font-size: 1.35rem; }
+            .details-grid {
+                grid-template-columns: 1fr;
+                max-width: 320px;
+            }
+            .detail-full { grid-column: 1; }
+            .info-list { margin-left: 0; margin-right: 0; }
+            .rsvp-button { padding: 12px 34px; font-size: 0.92rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top gold-red border -->
+    <div class="top-border"></div>
+
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <header class="hero">
+        <p class="hero-sacred">|| श्री गणेशाय नमः ||</p>
+        <div class="hero-om" aria-label="Om">ॐ</div>
+
+        <div class="hero-ornament">
+            <span class="hero-ornament-line"></span>
+            <span class="hero-ornament-dot"></span>
+            <span class="hero-ornament-line"></span>
+            <span class="hero-ornament-dot"></span>
+            <span class="hero-ornament-line"></span>
+        </div>
+
+        <h1 class="hero-title">Pooja Ceremony</h1>
+        <p class="hero-subtitle">Sacred Pre-Wedding Blessings</p>
+
+        <div class="hero-couple">
+            <span>Nithya</span>
+            <span class="hero-couple-amp"> &amp; </span>
+            <span>Luke</span>
+        </div>
+
+        <p class="hero-date">Friday · June 5, 2026</p>
+    </header>
+
+    <div class="gold-bar"></div>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section class="section about-section fade-in">
+        <div class="section-icon">🪔</div>
+        <h2 class="section-title">About the Ceremony</h2>
+        <p class="section-subtitle">A Sacred Beginning</p>
+        <div class="section-divider">
+            <span class="section-divider-line"></span>
+            <span class="section-divider-icon">◆</span>
+            <span class="section-divider-line"></span>
+        </div>
+        <p class="section-text">
+            As we prepare for the wedding of Nithya &amp; Luke, we invite you to join our families
+            in a traditional Hindu Pooja ceremony — a time of prayer, blessings, and
+            invoking divine grace for the couple's new journey together. This intimate gathering
+            is a cherished tradition that brings loved ones together on the eve of the wedding
+            celebration.
+        </p>
+    </section>
+
+    <div class="gold-bar"></div>
+
+    <!-- ═══════════════════ DETAILS ═══════════════════ -->
+    <section class="section fade-in">
+        <div class="section-icon">📿</div>
+        <h2 class="section-title">Event Details</h2>
+        <p class="section-subtitle">When &amp; Where</p>
+        <div class="section-divider">
+            <span class="section-divider-line"></span>
+            <span class="section-divider-icon">◆</span>
+            <span class="section-divider-line"></span>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <p class="detail-card-label">Date</p>
+                <p class="detail-card-value">Friday</p>
+                <p class="detail-card-sub">June 5, 2026</p>
+            </div>
+            <div class="detail-card">
+                <p class="detail-card-label">Time</p>
+                <p class="detail-card-value">TBA</p>
+                <p class="detail-card-sub">To Be Announced</p>
+            </div>
+            <div class="detail-card detail-full">
+                <p class="detail-card-label">Venue</p>
+                <p class="detail-card-value">1700 Buford Highway</p>
+                <p class="detail-card-sub">Duluth, Georgia 30097</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="gold-bar"></div>
+
+    <!-- ═══════════════════ WHAT TO KNOW ═══════════════════ -->
+    <section class="section about-section fade-in">
+        <div class="section-icon">✦</div>
+        <h2 class="section-title">Good to Know</h2>
+        <p class="section-subtitle">For Our Guests</p>
+        <div class="section-divider">
+            <span class="section-divider-line"></span>
+            <span class="section-divider-icon">◆</span>
+            <span class="section-divider-line"></span>
+        </div>
+
+        <ul class="info-list">
+            <li>
+                <span class="info-icon">👗</span>
+                <span class="info-text"><strong>Attire:</strong> Traditional Indian or ethnic wear is encouraged. Come in your most vibrant colors!</span>
+            </li>
+            <li>
+                <span class="info-icon">🪷</span>
+                <span class="info-text"><strong>The Ceremony:</strong> A Hindu prayer ritual invoking blessings from the divine for the couple's new life together.</span>
+            </li>
+            <li>
+                <span class="info-icon">🍽️</span>
+                <span class="info-text"><strong>Dinner:</strong> A traditional Indian meal will be served following the ceremony.</span>
+            </li>
+            <li>
+                <span class="info-icon">📍</span>
+                <span class="info-text"><strong>Location:</strong> The same venue as the wedding — 1700 Buford Highway, Duluth, GA 30097.</span>
+            </li>
+        </ul>
+    </section>
+
+    <div class="gold-bar"></div>
+
+    <!-- ═══════════════════ RSVP ═══════════════════ -->
+    <section class="rsvp-section fade-in">
+        <div class="section-icon" style="color: #E8C564;">🙏</div>
+        <h2 class="section-title">RSVP</h2>
+        <p class="section-subtitle">We Would Be Honored</p>
+        <div class="section-divider">
+            <span class="section-divider-line"></span>
+            <span class="section-divider-icon">◆</span>
+            <span class="section-divider-line"></span>
+        </div>
+        <p class="section-text">
+            Please let us know if you will be joining us for the Pooja ceremony<br>
+            so we can prepare accordingly.
+        </p>
+
+        <a href="https://forms.google.com/pooja-rsvp-placeholder" target="_blank" class="rsvp-button">
+            RSVP Now
+        </a>
+
+        <p class="rsvp-note">Kindly respond by May 15, 2026</p>
+    </section>
+
+    <!-- ═══════════════════ FOOTER ═══════════════════ -->
+    <footer class="footer">
+        <p class="footer-names">Nithya &amp; Luke</p>
+        <p class="footer-date">June 5 &amp; 6 · 2026</p>
+        <p class="footer-blessing">|| शुभम् भवतु ||</p>
+    </footer>
+
+    <!-- ── Scroll fade-in ── -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const els = document.querySelectorAll('.fade-in');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(el => el.classList.add('visible'));
+                return;
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            els.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

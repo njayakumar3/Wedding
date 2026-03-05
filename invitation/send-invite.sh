@@ -31,7 +31,7 @@ WA_MESSAGE = """✨ You're invited to the wedding of Nithya & Luke!
 📅 Saturday, June 6, 2026 · 1:00 PM
 📍 Duluth, Georgia
 
-Open your invitation 💌
+Open your invitation: 💌
 """ + INVITE_URL
 
 ENCODED = urllib.parse.quote(WA_MESSAGE, safe='')
