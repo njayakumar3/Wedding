@@ -367,6 +367,15 @@ main {
     font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
+.event-attire-detail {
+    color: #a08e72;
+    font-style: italic;
+    margin: 0.35rem 0 0 0;
+    letter-spacing: 0.06em;
+    font-size: 0.78rem;
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+}
+
 .event-description {
     font-size: 1rem;
     color: #5c4830;
@@ -745,6 +754,10 @@ footer {
     .event-attire {
         font-size: 0.75rem;
         letter-spacing: 0.08em;
+    }
+
+    .event-attire-detail {
+        font-size: 0.72rem;
     }
 
     .rsvp-button,
