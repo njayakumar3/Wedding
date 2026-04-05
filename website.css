@@ -368,11 +368,12 @@ main {
 }
 
 .event-attire-detail {
-    color: #a08e72;
+    color: #9a8968;
     font-style: italic;
-    margin: 0.35rem 0 0 0;
-    letter-spacing: 0.06em;
-    font-size: 0.78rem;
+    font-weight: 300;
+    margin: 0.3rem 0 0 0;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
     font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
