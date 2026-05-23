@@ -291,7 +291,8 @@
             max-width: 340px;
             margin: 24px auto 0;
             position: relative;
-            padding: 0 0 0 40px;
+            padding: 0 40px;
+            text-align: center;
         }
 
         .itinerary::before {
@@ -308,19 +309,17 @@
         .itinerary li {
             position: relative;
             padding: 10px 0;
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.12rem;
-            font-weight: 500;
-            color: #3B1A1E;
-            letter-spacing: 0.3px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
 
         .itinerary li::before {
             content: '';
             position: absolute;
             left: -32px;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 18px;
+            transform: none;
             width: 12px;
             height: 12px;
             border-radius: 50%;
@@ -330,6 +329,43 @@
 
         .itinerary li:last-child::before {
             background: #E89CAE;
+        }
+
+        .itinerary-time {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            color: #B8862B;
+            text-transform: uppercase;
+        }
+
+        .itinerary-label {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3B1A1E;
+        }
+
+        .itinerary-note {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.97rem;
+            color: #6B3040;
+            font-style: italic;
+            line-height: 1.6;
+            margin-top: 2px;
+        }
+
+        .pooja-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            align-items: center;
+        }
+
+        .pooja-steps span::before {
+            content: '·';
+            color: #B8862B;
+            margin-right: 6px;
         }
 
         /* ── Fade-in ── */
@@ -398,7 +434,7 @@
             </div>
             <div class="detail-card">
                 <p class="detail-card-label">Time</p>
-                <p class="detail-card-value">5:30 PM – 9:00 PM</p>
+                <p class="detail-card-value">6:30 PM – 10:00 PM</p>
                 <p class="detail-card-sub">Evening</p>
             </div>
             <div class="detail-card detail-full">
@@ -415,9 +451,33 @@
     <section class="section section-tinted fade-in">
         <div class="section-icon"><img src="../pictures/lamp.png" alt="Lamp"></div>
         <h2 class="section-title">What to Expect</h2>
+        <p class="section-subtitle">Evening of June 5th</p>
         <hr class="section-rule">
 
-            <p class="section-text">The evening will be centered around a Satyanarayana and Ganapati pooja, a time to seek blessings for the wedding day ahead.</p>
+        <ul class="itinerary">
+            <li>
+                <span class="itinerary-time">6:30 pm</span>
+                <span class="itinerary-label">Welcome</span>
+                <span class="itinerary-note">Please arrive by 6:30. Light appetizers will be served as guests gather.</span>
+            </li>
+            <li>
+                <span class="itinerary-time">7:00 pm</span>
+                <span class="itinerary-label">Pooja Begins</span>
+                <span class="itinerary-note">
+                    <span class="pooja-steps">
+                        <span>Ganapati Pooja</span>
+                        <span>Satyanarayana Pooja</span>
+                        <span>Kanyadanam</span>
+                        <span>Garland &amp; Chain Exchange</span>
+                    </span>
+                </span>
+            </li>
+            <li>
+                <span class="itinerary-time">8:15 pm</span>
+                <span class="itinerary-label">Dinner</span>
+                <span class="itinerary-note">Dinner will be served following the rituals.</span>
+            </li>
+        </ul>
     </section>
 
     <div class="gold-sep"></div>
@@ -434,7 +494,7 @@
                 <span class="info-text"><strong>Attire:</strong> Traditional Indian wear is encouraged.</span>
             </li>
             <li>
-                <span class="info-text"><strong>Dinner:</strong> Dinner will be provided.</span>
+                <span class="info-text"><strong>Food:</strong> Light appetizers and dinner will be provided.</span>
             </li>
         </ul>
     </section>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evening Programme Card — Nithya & Luke · June 5, 2026</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body {
+            background: #d9c9a8;
+        }
+
+        @page {
+            size: 5in 7in;
+            margin: 0;
+        }
+
+        @media print {
+            html, body { background: none; }
+            .card { box-shadow: none; margin: 0; border-radius: 0; }
+            .print-hint { display: none; }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            padding: 40px 20px;
+            gap: 14px;
+        }
+
+        .print-hint {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #5a3e20;
+            text-transform: uppercase;
+            opacity: 0.65;
+        }
+
+        /* ══ THE CARD ══ */
+        .card {
+            width: 5in;
+            height: 7in;
+            background: #FFF9ED;
+            border-radius: 3px;
+            box-shadow: 0 12px 50px rgba(60, 20, 10, 0.22);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Thin gold inner-border frame */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(212,165,62,0.22);
+            border-radius: 1px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* ══ HEADER ══ */
+        .header {
+            background: #8B1A1A;
+            text-align: center;
+            padding: 28px 32px 24px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #E8C564 30%, #E8C564 70%, transparent);
+        }
+
+        .header-om {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 2rem;
+            color: #E8C564;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .header-rule {
+            width: 100px;
+            height: 1px;
+            margin: 0 auto 14px;
+            border: none;
+            background: linear-gradient(90deg, transparent, rgba(232,197,100,0.5), transparent);
+        }
+
+        .header-eyebrow {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.65rem;
+            letter-spacing: 3.5px;
+            color: rgba(232,197,100,0.7);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .header-couple {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #FFF4DC;
+            letter-spacing: 2px;
+            margin-bottom: 2px;
+        }
+
+        .header-amp {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-style: italic;
+            color: #E8C564;
+            font-size: 1.5rem;
+            padding: 0 4px;
+        }
+
+        .header-date {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.72rem;
+            letter-spacing: 3px;
+            color: rgba(232,197,100,0.65);
+        }
+
+        /* ══ BODY ══ */
+        .body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 28px 36px 20px;
+        }
+
+        .body-title-row {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        .body-title {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.72rem;
+            letter-spacing: 4px;
+            color: #B8862B;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .body-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #3B1A1E;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .body-rule {
+            width: 70px;
+            height: 1px;
+            margin: 0 auto;
+            border: none;
+            background: linear-gradient(90deg, transparent, #E8C564, transparent);
+        }
+
+        /* ── Timeline ── */
+        .timeline {
+            list-style: none;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 14px;
+            bottom: 14px;
+            width: 1.5px;
+            background: linear-gradient(180deg, #E8C564 0%, #E89CAE 100%);
+            border-radius: 1px;
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            align-items: start;
+            gap: 0 14px;
+            position: relative;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            top: 6px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #E8C564;
+            border: 2.5px solid #FFF9ED;
+            outline: 1.5px solid #E8C564;
+            z-index: 1;
+        }
+
+        .tl-item:last-child::before {
+            background: #E89CAE;
+            outline-color: #E89CAE;
+        }
+
+        .tl-time {
+            font-family: 'Cormorant SC', Georgia, serif;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: #B8862B;
+            text-align: right;
+            padding-top: 4px;
+            line-height: 1.35;
+        }
+
+        .tl-body {
+            padding-left: 10px;
+        }
+
+        .tl-label {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #3B1A1E;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+
+        .tl-note {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.85rem;
+            color: #6B3040;
+            font-style: italic;
+            line-height: 1.55;
+        }
+
+        .tl-sub-list {
+            list-style: none;
+            margin-top: 2px;
+        }
+
+        .tl-sub-list li {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 0.83rem;
+            color: #6B3040;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .tl-sub-list li::before {
+            content: '·';
+            color: #B8862B;
+            margin-right: 5px;
+        }
+
+        /* ══ FOOTER ══ */
+        .footer {
+            text-align: center;
+            padding: 14px 32px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .footer-rule {
+            flex: 1;
+            height: 1px;
+            border: none;
+            background: linear-gradient(90deg, transparent, rgba(212,165,62,0.35));
+        }
+        .footer-rule.flip {
+            background: linear-gradient(90deg, rgba(212,165,62,0.35), transparent);
+        }
+
+        .footer-text {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+            font-size: 0.72rem;
+            color: rgba(184,134,43,0.5);
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+<p class="print-hint">Print at 100% · No margins · 5 × 7 in</p>
+
+<div class="card">
+
+    <!-- ══ HEADER ══ -->
+    <div class="header">
+        <div class="header-om">ॐ</div>
+        <hr class="header-rule">
+        <p class="header-eyebrow">Pre-Wedding Rituals</p>
+        <h1 class="header-couple">Nithya <span class="header-amp">&amp;</span> Luke</h1>
+        <p class="header-date">Friday · June 5, 2026</p>
+    </div>
+
+    <!-- ══ BODY ══ -->
+    <div class="body">
+
+        <div class="body-title-row">
+            <p class="body-title">Evening Programme</p>
+            <h2 class="body-heading">Timeline of Events</h2>
+            <hr class="body-rule">
+        </div>
+
+        <ul class="timeline">
+
+            <li class="tl-item">
+                <span class="tl-time">6:30<br>pm</span>
+                <div class="tl-body">
+                    <p class="tl-label">Welcome</p>
+                    <p class="tl-note">Please arrive by 6:30 pm. Light appetizers will be served as guests gather.</p>
+                </div>
+            </li>
+
+            <li class="tl-item">
+                <span class="tl-time">7:00<br>pm</span>
+                <div class="tl-body">
+                    <p class="tl-label">Pooja Begins</p>
+                    <ul class="tl-sub-list">
+                        <li>Ganapati Pooja</li>
+                        <li>Satyanarayana Pooja</li>
+                        <li>Kanyadanam</li>
+                        <li>Garland &amp; Chain Exchange</li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="tl-item">
+                <span class="tl-time">8:15<br>pm</span>
+                <div class="tl-body">
+                    <p class="tl-label">Dinner</p>
+                    <p class="tl-note">Dinner will be served following the rituals.</p>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <div class="footer">
+        <hr class="footer-rule">
+        <span class="footer-text">|| शुभम् भवतु ||</span>
+        <hr class="footer-rule flip">
+    </div>
+
+</div>
+
+</body>
+</html>
